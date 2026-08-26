@@ -1,0 +1,137 @@
+﻿---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="UOT-DETR | Amirhossein Eskorouchi"
+  description="UOT-DETR is a distributionally constrained visual quality measurement framework that integrates unbalanced optimal transport into DETR training for wood-chip size estimation."
+>
+  <article class="page project-detail-page">
+    <header class="page-header project-detail-header">
+      <p class="project-detail-category">
+        Machine Learning · Optimization · Intelligent Manufacturing
+      </p>
+
+      <h1 class="page-title">
+        Distributionally Constrained Visual Quality Measurement Using
+        Unbalanced Optimal Transport
+      </h1>
+
+      <p class="project-detail-subtitle">
+        Wood-chip size estimation for manufacturing process monitoring
+      </p>
+
+      <p class="project-detail-authors">
+        <strong>Amirhossein Eskorouchi</strong>, Jason T. Street,
+        Haifeng Wang, and Mohammad Marufuzzaman
+      </p>
+
+      <p class="project-detail-status">
+        Under review at <em>Decision Support Systems</em>
+      </p>
+
+      <p class="research-entry-links" aria-label="UOT-DETR resources">
+        <a
+          href="https://github.com/amirhossein-eskorouchi/UOT-DETR"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Code
+        </a>
+        <span aria-hidden="true">/</span>
+        <a
+          href="https://doi.org/10.5281/zenodo.18392693"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Dataset
+        </a>
+      </p>
+    </header>
+
+    <figure class="project-hero-figure">
+      <a
+        href="/images/projects/uot-detr/uot_detr_architecture.png"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open the full-resolution UOT-DETR architecture figure"
+      >
+        <img
+          src="/images/projects/uot-detr/uot_detr_architecture.png"
+          alt="Architecture of UOT-DETR showing the baseline DETR pipeline and unbalanced optimal transport regularizer"
+          width="2630"
+          height="1545"
+        />
+      </a>
+
+      <figcaption>
+        UOT-DETR adds a training-time population-level objective to the
+        standard DETR pipeline while preserving the original inference path.
+      </figcaption>
+    </figure>
+
+    <section class="content-section">
+      <h2>Research problem</h2>
+
+      <p>
+        Conventional object detectors are optimized to identify individual
+        objects accurately. In manufacturing quality monitoring, however, the
+        downstream decision may depend on recovering the physical distribution
+        of the complete object population. Missed small, overlapping, or
+        partially occluded chips can therefore bias the estimated size
+        distribution even when conventional detection metrics appear strong.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Method</h2>
+
+      <p>
+        UOT-DETR integrates an unbalanced optimal transport regularizer into
+        DETR training. The regularizer compares predicted and reference measures
+        in normalized log-size space and accommodates missing or additional
+        predicted mass. It complements DETR's instance-level Hungarian
+        supervision with a population-level distribution objective.
+      </p>
+
+      <p>
+        The UOT component is used only during training. Prediction follows the
+        standard DETR inference path, so the method introduces no additional
+        inference-time overhead.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Selected results</h2>
+
+      <ul>
+        <li>mAR50: 95</li>
+        <li>Overall mAR50-95: 72</li>
+        <li>Small-object mAR50-95: 42</li>
+        <li>Small-object mAR50 improvement over DETR: 24.7 percentage points</li>
+        <li>Small-object mAP50 improvement over DETR: 15.4 percentage points</li>
+        <li>Reported KL divergence: 0.041 to 0.048</li>
+      </ul>
+
+      <p>
+        The largest improvements occurred for small objects in medium- and
+        high-clutter scenes, where faithful recovery is most difficult and most
+        relevant to population-level quality measurement.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Project support</h2>
+
+      <p>USDA-NIFA</p>
+    </section>
+
+    <section class="content-section">
+      <p>
+        <a href="/">Return to the homepage</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/projects">View all projects</a>
+      </p>
+    </section>
+  </article>
+</BaseLayout>

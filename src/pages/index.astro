@@ -111,68 +111,128 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     />
   </section>
 
-  <section class="home-section">
+  <section class="home-section" id="research">
     <h2 class="section-heading">Research</h2>
 
     <p class="section-introduction">
-      My research examines how machine learning and optimization can produce
-      reliable, interpretable, and decision-relevant models for complex
-      engineering and scientific applications.
+      My research combines machine learning and mathematical optimization to
+      develop reliable and decision-relevant methods for complex engineering
+      and scientific applications.
     </p>
 
-    <ul class="link-list">
-      <li>
-        <a href="/research">Research overview</a>
-        <span class="link-description">
-          Research questions, methodological directions, and application areas.
-        </span>
-      </li>
+    <figure class="research-roadmap">
+      <a
+        href="/images/research/research-roadmap.png"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open the full-resolution research roadmap"
+      >
+        <img
+          src="/images/research/research-roadmap.png"
+          alt="Research roadmap connecting evidence-aligned learning, data-efficient learning, structured and multimodal learning, and intelligent decision systems with application domains and future research directions"
+          width="1574"
+          height="457"
+          loading="lazy"
+        />
+      </a>
 
-      <li>
-        <a href="/publications">Publications</a>
-        <span class="link-description">
-          Peer-reviewed articles, conference papers, and related research
-          materials.
-        </span>
-      </li>
-    </ul>
-  </section>
+      <figcaption>An overview of my research roadmap.</figcaption>
+    </figure>
 
-  <section class="home-section">
-    <h2 class="section-heading">Selected projects</h2>
-
-    <ul class="link-list">
-      <li>
-        <a href="/projects#uot-detr">
-          Distributionally Constrained Visual Measurement with UOT-DETR
+    <article class="research-entry">
+      <figure class="research-entry-figure">
+        <a
+          href="/images/projects/uot-detr/uot_detr_architecture.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the full-resolution UOT-DETR architecture figure"
+        >
+          <img
+            class="research-entry-image"
+            src="/images/projects/uot-detr/uot_detr_architecture.png"
+            alt="Architecture of UOT-DETR showing the baseline DETR pipeline and the unbalanced optimal transport regularizer"
+            width="2630"
+            height="1545"
+            loading="lazy"
+          />
         </a>
-        <span class="link-description">
-          Object detection and size-distribution estimation for manufacturing
-          monitoring.
-        </span>
-      </li>
 
-      <li>
-        <a href="/projects#knowledge-informed-ece">
-          Knowledge-Informed Learning for Medical Imaging
-        </a>
-        <span class="link-description">
-          Segmentation-guided representation learning for clinically relevant
-          prediction.
-        </span>
-      </li>
+        <figcaption>
+          UOT-DETR integrates population-level size-distribution regularization
+          into DETR training.
+        </figcaption>
+      </figure>
 
-      <li>
-        <a href="/projects#plantlife365">PlantLife365</a>
-        <span class="link-description">
-          An award-winning intelligent application supporting plant
-          identification and care.
-        </span>
-      </li>
-    </ul>
+      <div class="research-entry-content">
+        <h3>
+          <a href="/projects/uot-detr">
+            Distributionally Constrained Visual Quality Measurement Using
+            Unbalanced Optimal Transport: Wood-Chip Size Estimation for
+            Manufacturing Process Monitoring
+          </a>
+        </h3>
 
-    <p>
-      <a href="/projects">View all projects</a>
+        <p class="research-entry-authors">
+          <strong>Amirhossein Eskorouchi</strong>, Jason T. Street,
+          Haifeng Wang, and Mohammad Marufuzzaman
+        </p>
+
+        <p class="research-entry-status">
+          Under review at <em>Decision Support Systems</em>
+        </p>
+
+        <p class="research-entry-links" aria-label="UOT-DETR resources">
+          <a
+            href="https://github.com/amirhossein-eskorouchi/UOT-DETR"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Code
+          </a>
+          <span aria-hidden="true">/</span>
+          <a
+            href="https://doi.org/10.5281/zenodo.18392693"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Dataset
+          </a>
+          <span aria-hidden="true">/</span>
+          <a href="/projects/uot-detr">Project page</a>
+        </p>
+
+        <div class="research-entry-details">
+          <p>
+            <strong>Description:</strong>{" "}
+            Conventional object detectors optimize individual detections but
+            may fail to recover the physical size distribution needed for
+            manufacturing quality decisions. UOT-DETR addresses this problem by
+            adding an unbalanced optimal transport regularizer to DETR training,
+            encouraging the predicted wood-chip population to preserve the
+            reference size distribution while retaining the standard DETR
+            inference process.
+          </p>
+
+          <p>
+            <strong>Outcome:</strong>{" "}
+            UOT-DETR achieved an mAR50 of 95, an overall mAR50-95 of 72, and a
+            small-object mAR50-95 of 42 on dense real-world wood-chip imagery.
+            Across ten paired experimental seeds, it improved small-object
+            mAR50 by 24.7 percentage points and small-object mAP50 by 15.4
+            percentage points over DETR, with the largest gains occurring in
+            medium- and high-clutter scenes. The training-time regularizer
+            introduces no inference-time overhead.
+          </p>
+
+          <p class="research-entry-support">
+            <strong>Project support:</strong>{" "}USDA-NIFA
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <p class="section-follow-link">
+      <a href="/research">View the complete research overview</a>
     </p>
   </section>
 
