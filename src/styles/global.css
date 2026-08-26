@@ -563,6 +563,28 @@ a:hover {
   margin: 4px 0;
 }
 
+.award-title {
+  color: var(--heading);
+  font-weight: 700;
+}
+
+.award-title a,
+.award-title a:visited {
+  color: var(--heading);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.award-title a:hover,
+.award-title a:focus-visible {
+  color: var(--heading);
+  text-decoration: underline;
+}
+
+.award-title strong {
+  color: inherit;
+}
+
 .research-entry-links {
   display: flex;
   flex-wrap: wrap;
