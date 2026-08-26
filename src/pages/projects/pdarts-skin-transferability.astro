@@ -1,0 +1,345 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="P-DARTS Skin Transferability | Amirhossein Eskorouchi"
+  description="Architecture transferability with Progressive Differentiable Architecture Search for skin-lesion diagnosis."
+>
+  <article class="project-page">
+    <header class="project-header">
+      <p class="project-kicker">
+        Medical AI &middot; Neural Architecture Search &middot; Transferability
+      </p>
+
+      <h1>
+        Understanding Knowledge Transferability in Differentiable Architecture
+        Search for Skin Lesion Diagnosis
+      </h1>
+
+      <p class="project-authors">
+        Anh Vo, Lu He,{" "}<strong>Amirhossein Eskorouchi</strong>, and Haifeng Wang
+      </p>
+
+      <p class="project-venue">
+        <em>IISE Transactions on Healthcare Systems Engineering</em>,
+        16(1), 71-90, 2026
+      </p>
+
+      <p class="project-links">
+        <a
+          href="https://doi.org/10.1080/24725579.2026.2622416"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Article
+        </a>
+        <span aria-hidden="true"> / </span>
+        <a
+          href="https://github.com/amirhossein-eskorouchi/pdarts-skin-transferability"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Code
+        </a>
+        <span aria-hidden="true"> / </span>
+        <a
+          href="https://www.tandfonline.com/doi/full/10.1080/24725579.2026.2622416"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Publisher page
+        </a>
+      </p>
+    </header>
+
+    <figure class="project-hero-figure">
+      <img
+        src="/images/projects/pdarts-skin-transferability/architecture-transfer-workflow.png"
+        alt="Experimental workflow for transferring a searched neural architecture from a source skin-lesion dataset to a target dataset with new target-task weights"
+      />
+      <figcaption>
+        The study transfers the discovered architecture, not the source-trained
+        weights. Each target model is initialized and trained anew.
+      </figcaption>
+    </figure>
+
+    <section class="project-detail-section">
+      <h2>Research question</h2>
+
+      <p>
+        Neural architecture search can identify task-specific network
+        structures, but repeating the search for every new medical-imaging
+        dataset is computationally expensive. This work asks whether a cell
+        architecture discovered on a larger dermoscopic source dataset can be
+        reused effectively when the target images differ in acquisition
+        modality, sample size, class balance, and resolution.
+      </p>
+
+      <p>
+        The study isolates architectural knowledge from pretrained feature
+        transfer. Progressive Differentiable Architecture Search discovers
+        normal and reduction cells on a source dataset. Those cells are then
+        stacked into target evaluation networks, assigned newly initialized
+        weights, and trained on the target data from scratch.
+      </p>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Study design</h2>
+
+      <div class="project-fact-grid">
+        <div>
+          <h3>Source and targets</h3>
+          <p>
+            ISIC-2019 serves as the primary search source. PAD-UFES-20 and
+            DermaMNIST provide cross-dataset targets with different image
+            characteristics and data regimes.
+          </p>
+        </div>
+
+        <div>
+          <h3>Architecture depth</h3>
+          <p>
+            P-DARTS searches at depths 6, 8, and 10. The discovered cells are
+            evaluated in networks containing 2 through 14 cells.
+          </p>
+        </div>
+
+        <div>
+          <h3>Evaluation settings</h3>
+          <p>
+            The experiments cover six-class and malignant-versus-benign
+            diagnosis at 32&times;32 and 224&times;224 resolutions.
+          </p>
+        </div>
+
+        <div>
+          <h3>Validation</h3>
+          <p>
+            Performance is examined using accuracy, weighted F1, sensitivity,
+            specificity, AUC, repeated architectures, and statistical
+            comparisons.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Key findings</h2>
+
+      <ul>
+        <li>
+          Transferred P-DARTS architectures remained competitive across
+          PAD-UFES-20 and DermaMNIST despite changes in acquisition conditions
+          and dataset scale.
+        </li>
+
+        <li>
+          At 224&times;224 resolution, the best reported mean accuracies were
+          69.06% on PAD-UFES-20 and 79.48% on DermaMNIST.
+        </li>
+
+        <li>
+          The best reported individual PAD-UFES-20 result reached 63.70% for
+          six-class diagnosis and 97.71% for malignant-versus-benign
+          classification.
+        </li>
+
+        <li>
+          Evaluation-network depth was more influential than the absolute gap
+          between search depth and evaluation depth.
+        </li>
+
+        <li>
+          Pooling operations in the discovered reduction cells were associated
+          with stronger transfer behavior.
+        </li>
+      </ul>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Architecture and transfer behavior</h2>
+
+      <div class="project-media-grid balanced">
+        <figure>
+          <img
+            src="/images/projects/pdarts-skin-transferability/source-target-performance.png"
+            alt="Test accuracy of P-DARTS and DARTS architectures across source and target datasets as evaluation depth changes"
+            loading="lazy"
+          />
+          <figcaption>
+            Source and target accuracy across evaluation depths for P-DARTS6,
+            P-DARTS8, P-DARTS10, and DARTS6.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="/images/projects/pdarts-skin-transferability/pdarts6-discovered-cells.png"
+            alt="Normal and reduction cells discovered by P-DARTS6 for the skin-lesion architecture-transfer study"
+            loading="lazy"
+          />
+          <figcaption>
+            A representative P-DARTS6 normal cell and reduction cell
+            transferred into target evaluation networks.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Research contribution</h2>
+
+      <p>
+        The project provides a controlled study of transfer at the architecture
+        level. It separates reusable network structure from pretrained weights
+        and examines how source-data properties, search depth, evaluation
+        depth, cell operations, and image resolution shape transfer
+        performance. This offers evidence that architecture search can produce
+        reusable structural knowledge for data-limited medical-imaging tasks.
+      </p>
+    </section>
+
+    <section class="project-detail-section project-note">
+      <h2>Responsible interpretation</h2>
+
+      <p>
+        This is a retrospective research study, not a clinical diagnostic
+        system. Historical PAD-UFES-20 experiments used image-level splits with
+        possible patient overlap, so future patient-grouped validation must be
+        reported separately. The repository preserves publication-reported
+        results and reproducibility records but does not claim that the
+        maintained package has regenerated the entire manuscript experiment
+        grid.
+      </p>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Citation</h2>
+
+      <p>
+        Vo, A., He, L., Eskorouchi, A., and Wang, H. (2026). Understanding
+        knowledge transferability in differentiable architecture search for
+        skin lesion diagnosis.
+        <em>IISE Transactions on Healthcare Systems Engineering</em>,
+        16(1), 71-90.
+      </p>
+
+      <p>
+        <a
+          href="https://doi.org/10.1080/24725579.2026.2622416"
+          target="_blank"
+          rel="noreferrer"
+        >
+          https://doi.org/10.1080/24725579.2026.2622416
+        </a>
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .project-page {
+    width: 100%;
+  }
+
+  .project-header {
+    margin-bottom: 2rem;
+  }
+
+  .project-kicker {
+    color: var(--muted, #536174);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .project-header h1 {
+    max-width: 58rem;
+  }
+
+  .project-authors,
+  .project-venue,
+  .project-links {
+    margin: 0.55rem 0;
+  }
+
+  .project-hero-figure img,
+  .project-media-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .project-hero-figure {
+    max-width: 64rem;
+    margin: 2rem auto 3rem;
+  }
+
+  figcaption {
+    margin-top: 0.65rem;
+    color: var(--muted, #536174);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .project-detail-section {
+    margin-top: 3rem;
+  }
+
+  .project-detail-section > p,
+  .project-detail-section > ul {
+    max-width: 70rem;
+  }
+
+  .project-detail-section li + li {
+    margin-top: 0.65rem;
+  }
+
+  .project-fact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+  }
+
+  .project-fact-grid > div {
+    border-top: 1px solid var(--border, #dfe5ec);
+    padding-top: 1rem;
+  }
+
+  .project-fact-grid h3 {
+    margin: 0 0 0.45rem;
+  }
+
+  .project-fact-grid p {
+    margin: 0;
+  }
+
+  .project-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .project-media-grid figure {
+    margin: 0;
+  }
+
+  .project-note {
+    border-left: 3px solid var(--border, #dfe5ec);
+    padding-left: 1.25rem;
+  }
+
+  @media (max-width: 760px) {
+    .project-fact-grid,
+    .project-media-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-detail-section {
+      margin-top: 2.25rem;
+    }
+  }
+</style>

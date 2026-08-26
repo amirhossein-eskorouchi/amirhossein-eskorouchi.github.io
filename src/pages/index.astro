@@ -545,7 +545,178 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </article>
 
-    <p class="section-follow-link">
+    <article class="research-entry">
+      <figure class="research-entry-figure">
+        <a
+          href="/images/projects/ml-psg-adhd/feature-extraction.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the full-resolution PSG feature-extraction workflow"
+        >
+          <img
+            class="research-entry-image"
+            src="/images/projects/ml-psg-adhd/feature-extraction.png"
+            alt="Feature-extraction workflow converting sleep-stage-specific correlations across 17 polysomnography channels into graph-based participant features"
+            width="1279"
+            height="646"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          Sleep-stage correlation networks are summarized into a
+          five-dimensional graph-based representation for each participant.
+        </figcaption>
+      </figure>
+
+      <div class="research-entry-content">
+        <h3>
+          <a href="/projects/ml-psg-adhd">
+            Machine Learning-Based Polysomnography Data Analysis for ADHD
+            Diagnosis: A Focus on Sleep Stage-Based Biomarkers
+          </a>
+        </h3>
+
+        <p class="research-entry-authors">
+          <strong>Amirhossein Eskorouchi</strong>, Haifeng Wang,
+          Jonathan W. Lee, Vignesh H. Nayak, Norma B. Ojeda, and Lir-Wan Fan
+        </p>
+
+        <p class="research-entry-status">
+          <em>
+            Proceedings of the 2025 IEEE 22nd International Symposium on
+            Biomedical Imaging (ISBI 2025)
+          </em>
+        </p>
+
+        <p class="research-entry-links" aria-label="ML-PSG-ADHD resources">
+          <a
+            href="https://github.com/amirhossein-eskorouchi/ML-PSG-ADHD-Analysis"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Code
+          </a>
+          <span aria-hidden="true">/</span>
+          <a
+            href="https://doi.org/10.1109/ISBI60581.2025.10981031"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Paper
+          </a>
+          <span aria-hidden="true">/</span>
+          <a href="/projects/ml-psg-adhd">Project page</a>
+        </p>
+
+        <div class="research-entry-details">
+          <p>
+            <strong>Description:</strong>{" "}
+            This study investigates sleep-stage-specific physiological
+            connectivity as an objective source of ADHD biomarkers. Pearson
+            correlations across 17 EEG, EOG, EMG, and ECG channels are
+            converted into weighted graphs for each participant and sleep
+            stage. Average shortest-path length summarizes each graph, forming
+            a five-dimensional participant representation spanning Wake,
+            Sleep Stages 1, 2, and 3-4, and rapid eye movement sleep. A Random
+            Forest classifier then evaluates these graph-derived features
+            through nested cross-validation.
+          </p>
+
+          <p>
+            <strong>Outcome:</strong>{" "}
+            The published study analyzed 48 participants and more than 40,000
+            30-second PSG epochs. The model achieved average accuracy of 72%,
+            precision of 71%, recall of 85%, and an F1 score of 76%. Feature
+            importance and permutation analysis identified Sleep Stage 1 and
+            Sleep Stage 3-4 as the most influential features for
+            distinguishing ADHD and control participants.
+          </p>
+
+          <p class="research-entry-support">
+            <strong>Project support:</strong>{" "}
+            System Intelligence and Optimization Lab
+          </p>
+        </div>
+      </div>
+    </article>
+
+        <article class="research-entry">
+      <figure class="research-entry-figure">
+        <img
+          class="research-entry-image"
+          src="/images/projects/pdarts-skin-transferability/architecture-transfer-workflow.png"
+          alt="Workflow for searching a neural architecture on a source skin-lesion dataset and evaluating the transferred architecture with newly initialized weights on a target dataset"
+          loading="lazy"
+        />
+        <figcaption>
+          Architecture transfer preserves the discovered neural structure while learning new weights on each target dataset.
+        </figcaption>
+      </figure>
+
+      <div class="research-entry-content">
+        <h3>
+          <a href="/projects/pdarts-skin-transferability">
+            Understanding Knowledge Transferability in Differentiable Architecture Search for Skin Lesion Diagnosis
+          </a>
+        </h3>
+
+        <p class="research-entry-authors">
+          Anh Vo, Lu He,{" "}<strong>Amirhossein Eskorouchi</strong>, and Haifeng Wang
+        </p>
+
+        <p class="research-entry-venue">
+          <em>IISE Transactions on Healthcare Systems Engineering</em>,
+          16(1), 71-90, 2026
+        </p>
+
+        <p class="research-entry-links">
+          <a
+            href="https://doi.org/10.1080/24725579.2026.2622416"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Article
+          </a>
+          <span aria-hidden="true"> / </span>
+          <a
+            href="https://github.com/amirhossein-eskorouchi/pdarts-skin-transferability"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Code
+          </a>
+          <span aria-hidden="true"> / </span>
+          <a href="/projects/pdarts-skin-transferability">
+            Project page
+          </a>
+        </p>
+
+        <p>
+          <strong>Description:</strong>
+          This study investigates whether neural architectures discovered
+          through Progressive Differentiable Architecture Search on one
+          skin-lesion dataset remain effective under different acquisition
+          conditions, class distributions, and data scales. The architecture
+          is transferred from dermoscopic ISIC-2019 images to PAD-UFES-20
+          smartphone images and DermaMNIST, while all target-task weights are
+          initialized and trained anew.
+        </p>
+
+        <p>
+          <strong>Outcome:</strong>
+          The experiments show that transferable P-DARTS architectures remain
+          competitive across datasets, resolutions, and diagnostic
+          formulations. At 224&times;224 resolution, P-DARTS6 reached mean
+          accuracies of 69.06% on PAD-UFES-20 and 79.48% on DermaMNIST, while
+          the best reported binary PAD-UFES-20 run achieved 97.71%. The
+          analysis also found that evaluation-network depth mattered more than
+          the search-to-evaluation depth gap and that pooling operations were
+          associated with transfer behavior.
+        </p>
+      </div>
+    </article>
+<p class="section-follow-link">
       <a href="/research">View the complete research overview</a>
     </p>
   </section>

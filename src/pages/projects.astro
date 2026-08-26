@@ -159,24 +159,38 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </section>
 
       <section class="project-item" id="adhd-analysis">
-        <div class="project-label">Health Analytics</div>
+        <div class="project-label">Biomedical Signal Analysis</div>
 
         <div>
-          <h2>Machine Learning and PSG Analysis for ADHD Research</h2>
+          <h2>
+            Graph-Based Polysomnography Analysis for Sleep-Stage-Specific ADHD
+            Biomarkers
+          </h2>
 
           <p>
-            A reproducible analysis pipeline connecting polysomnography-derived
-            variables, network analysis, machine learning, and interpretable
-            feature evaluation.
+            A graph-based machine-learning workflow that transforms
+            multichannel polysomnography recordings into sleep-stage-specific
+            connectivity features and evaluates their value for distinguishing
+            ADHD and control participants.
           </p>
 
           <p>
+            <a href="/projects/ml-psg-adhd">Project page</a>
+            <span aria-hidden="true"> &middot; </span>
             <a
               href="https://github.com/amirhossein-eskorouchi/ML-PSG-ADHD-Analysis"
               target="_blank"
               rel="noreferrer"
             >
               Code
+            </a>
+            <span aria-hidden="true"> &middot; </span>
+            <a
+              href="https://doi.org/10.1109/ISBI60581.2025.10981031"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Paper
             </a>
           </p>
         </div>
@@ -206,4 +220,38 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </section>
     </div>
   </article>
+<article class="page">
+  <h2>
+    <a href="/projects/pdarts-skin-transferability">
+      P-DARTS Skin Transferability
+    </a>
+  </h2>
+
+  <p>
+    Architecture transfer across dermoscopic, smartphone, and benchmark
+    skin-lesion datasets using Progressive Differentiable Architecture Search.
+  </p>
+
+  <p>
+    <a href="/projects/pdarts-skin-transferability">
+      View project
+    </a>
+    <span aria-hidden="true"> / </span>
+    <a
+      href="https://doi.org/10.1080/24725579.2026.2622416"
+      target="_blank"
+      rel="noreferrer"
+    >
+      Article
+    </a>
+    <span aria-hidden="true"> / </span>
+    <a
+      href="https://github.com/amirhossein-eskorouchi/pdarts-skin-transferability"
+      target="_blank"
+      rel="noreferrer"
+    >
+      Code
+    </a>
+  </p>
+</article>
 </BaseLayout>

@@ -1,0 +1,344 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="ML-PSG-ADHD Analysis | Amirhossein Eskorouchi"
+  description="Graph-based polysomnography analysis and machine learning for sleep-stage-specific ADHD biomarkers, published at IEEE ISBI 2025."
+>
+  <article class="page project-detail-page">
+    <header class="page-header project-detail-header">
+      <p class="project-detail-category">
+        Biomedical Signal Analysis &middot; Graph Machine Learning &middot;
+        Sleep Research
+      </p>
+
+      <h1 class="page-title">
+        Machine Learning-Based Polysomnography Data Analysis for ADHD
+        Diagnosis: A Focus on Sleep Stage-Based Biomarkers
+      </h1>
+
+      <p class="project-detail-authors">
+        <strong>Amirhossein Eskorouchi</strong>, Haifeng Wang,
+        Jonathan W. Lee, Vignesh H. Nayak, Norma B. Ojeda, and Lir-Wan Fan
+      </p>
+
+      <p class="project-detail-status">
+        <em>
+          Proceedings of the 2025 IEEE 22nd International Symposium on
+          Biomedical Imaging (ISBI 2025)
+        </em>
+      </p>
+
+      <p class="research-entry-links" aria-label="ML-PSG-ADHD resources">
+        <a
+          href="https://github.com/amirhossein-eskorouchi/ML-PSG-ADHD-Analysis"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Code
+        </a>
+        <span aria-hidden="true">/</span>
+        <a
+          href="https://doi.org/10.1109/ISBI60581.2025.10981031"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Published paper
+        </a>
+      </p>
+    </header>
+
+    <figure class="project-hero-figure">
+      <a
+        href="/images/projects/ml-psg-adhd/feature-extraction.png"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open the full-resolution PSG feature-extraction workflow"
+      >
+        <img
+          src="/images/projects/ml-psg-adhd/feature-extraction.png"
+          alt="Methodology for converting correlation matrices across 17 PSG channels into sleep-stage-specific graph features"
+          width="1279"
+          height="646"
+        />
+      </a>
+
+      <figcaption>
+        Pearson channel correlations form stage-specific physiological
+        networks. Average shortest-path length produces one graph feature for
+        each of five sleep stages and each participant.
+      </figcaption>
+    </figure>
+
+    <section class="content-section">
+      <h2>Research motivation</h2>
+
+      <p>
+        ADHD assessment commonly relies on behavioral observations,
+        questionnaires, and clinical judgment. These sources are important,
+        but they can vary across observers and settings. The study investigated
+        whether physiological relationships measured during sleep could
+        provide complementary, objectively derived biomarkers.
+      </p>
+
+      <p>
+        Polysomnography records several interacting physiological systems
+        throughout sleep. Rather than analyzing each signal independently, the
+        project models relationships among EEG, EOG, EMG, and ECG channels as
+        weighted networks and examines how those relationships vary across
+        sleep stages.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Study cohort and polysomnography data</h2>
+
+      <p>
+        The study included 48 participants between 6 and 18 years of age:
+        25 participants with ADHD and 23 control participants. Each
+        participant contributed approximately eight hours of PSG recordings
+        acquired through the University of Mississippi Medical Center
+        Pediatric Sleep Center.
+      </p>
+
+      <p>
+        The analysis included 20,294 ADHD epochs and 19,968 control epochs.
+        Every 30-second epoch was sampled at 512 Hz across 17 channels:
+        eight EEG channels, two EOG channels, five EMG channels, and two ECG
+        channels. The recordings were organized across Wake, Sleep Stage 1,
+        Sleep Stage 2, Sleep Stage 3-4, and rapid eye movement sleep.
+      </p>
+    </section>
+
+    <div class="project-media-grid">
+      <figure>
+        <a
+          href="/images/projects/ml-psg-adhd/data-acquisition.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the full-resolution PSG study and data-acquisition figure"
+        >
+          <img
+            src="/images/projects/ml-psg-adhd/data-acquisition.png"
+            alt="PSG study population, sleep-stage organization, and representative EEG, EOG, ECG, and EMG recordings"
+            width="1270"
+            height="649"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          Study cohort, sleep-stage organization, and representative
+          multichannel PSG recordings.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <a
+          href="/images/projects/ml-psg-adhd/psg-sensor-layout.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the PSG physiological sensor-layout figure"
+        >
+          <img
+            src="/images/projects/ml-psg-adhd/psg-sensor-layout.png"
+            alt="Human-body diagram showing physiological measurements captured through EEG, EOG, ECG, EMG, respiration, skin temperature, blood-volume pulse, electrodermal activity, and blood oxygen saturation sensors"
+            width="357"
+            height="230"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          PSG integrates neurological, ocular, muscular, cardiac,
+          respiratory, and peripheral physiological measurements.
+        </figcaption>
+      </figure>
+    </div>
+
+    <section class="content-section">
+      <h2>Graph-based feature extraction</h2>
+
+      <p>
+        For each 30-second epoch, the workflow calculates Pearson correlation
+        coefficients between all pairs of the 17 physiological channels.
+        Absolute correlation matrices are averaged for each participant and
+        sleep stage and represented as weighted NetworkX graphs.
+      </p>
+
+      <p>
+        Weighted shortest paths are calculated from each stage-specific graph,
+        and their average provides one graph feature. The five sleep-stage
+        features form a compact participant-level representation used by the
+        machine-learning model.
+      </p>
+
+      <p>
+        The public repository preserves the historical implementation exactly,
+        including its use of absolute correlations directly as graph edge
+        weights. It also provides a cleaned and tested Python package that
+        separates data handling, graph construction, feature extraction,
+        batch processing, modeling, and evaluation.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Machine-learning evaluation</h2>
+
+      <p>
+        A Random Forest classifier evaluates the five-dimensional
+        participant representation. The historical workflow uses an outer
+        five-fold cross-validation loop for testing and an inner five-fold
+        GridSearchCV loop for hyperparameter selection. The search considers
+        the number of trees, tree depth, minimum split size, and minimum leaf
+        size.
+      </p>
+    </section>
+
+    <figure class="project-hero-figure">
+      <a
+        href="/images/projects/ml-psg-adhd/nested-cross-validation.png"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open the full-resolution nested cross-validation diagram"
+      >
+        <img
+          src="/images/projects/ml-psg-adhd/nested-cross-validation.png"
+          alt="Nested cross-validation workflow with outer test folds and inner training and validation folds for hyperparameter selection"
+          width="1228"
+          height="415"
+          loading="lazy"
+        />
+      </a>
+
+      <figcaption>
+        Nested cross-validation separates outer-fold model evaluation from
+        inner-fold hyperparameter selection.
+      </figcaption>
+    </figure>
+
+    <section class="content-section">
+      <h2>Published results</h2>
+
+      <p>
+        The reported average Random Forest performance was:
+      </p>
+
+      <ul>
+        <li>Accuracy: 72%</li>
+        <li>Precision: 71%</li>
+        <li>Recall: 85%</li>
+        <li>F1 score: 76%</li>
+      </ul>
+
+      <p>
+        Random Forest feature importance and permutation importance both
+        identified Sleep Stage 1 and Sleep Stage 3-4 as the most influential
+        stage-level features. The result suggests that graph-based
+        physiological connectivity during light and deeper sleep contains
+        information relevant to differentiating the two study groups.
+      </p>
+    </section>
+
+    <div class="project-media-grid balanced">
+      <figure>
+        <a
+          href="/images/projects/ml-psg-adhd/random-forest-feature-importance.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the Random Forest feature-importance figure"
+        >
+          <img
+            src="/images/projects/ml-psg-adhd/random-forest-feature-importance.png"
+            alt="Random Forest feature importance across Wake, Sleep Stages 1, 2, and 3-4, and rapid eye movement sleep"
+            width="440"
+            height="250"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          Random Forest importance scores across the five sleep-stage
+          features.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <a
+          href="/images/projects/ml-psg-adhd/permutation-feature-importance.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the permutation feature-importance figure"
+        >
+          <img
+            src="/images/projects/ml-psg-adhd/permutation-feature-importance.png"
+            alt="Permutation feature importance identifying Sleep Stage 3-4 and Sleep Stage 1 as the strongest ADHD classification features"
+            width="457"
+            height="291"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          Permutation analysis independently confirms the importance of Sleep
+          Stage 1 and Sleep Stage 3-4.
+        </figcaption>
+      </figure>
+    </div>
+
+    <section class="content-section">
+      <h2>Reproducible research software</h2>
+
+      <p>
+        The public repository contains the preserved publication-era scripts,
+        a reusable Python package, command-line interfaces, historical
+        configurations, automated tests, continuous-integration validation,
+        machine-readable publication results, and a complete synthetic PSG
+        demonstration.
+      </p>
+
+      <p>
+        The original participant-level PSG recordings are protected clinical
+        data and are not publicly distributed. The synthetic demonstration is
+        provided only to validate that the software runs end to end. Synthetic
+        metrics and feature importances have no clinical or publication-level
+        interpretation.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Interpretation and limitations</h2>
+
+      <p>
+        The study used a limited cohort and should not be interpreted as a
+        general-purpose clinical diagnostic system. The repository also
+        documents historical methodological choices, including batch-level
+        stage imputation, sign-inversion augmentation before cross-validation,
+        direct use of correlation values as shortest-path weights, and
+        unseeded stochastic components.
+      </p>
+
+      <p>
+        These behaviors are preserved for scientific provenance rather than
+        silently replaced. The reported metrics are maintained as the
+        publication record and are not presented as deterministic
+        regenerations from the public synthetic data.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Project support</h2>
+
+      <p>System Intelligence and Optimization Lab</p>
+    </section>
+
+    <section class="content-section">
+      <p>
+        <a href="/">Return to the homepage</a>
+        <span aria-hidden="true"> &middot; </span>
+        <a href="/projects">View all projects</a>
+      </p>
+    </section>
+  </article>
+</BaseLayout>
