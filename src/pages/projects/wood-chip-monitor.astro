@@ -1,0 +1,315 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Wood-Chip Monitor | Amirhossein Eskorouchi"
+  description="Wood-Chip Monitor is a portable NVIDIA Jetson and TensorRT edge-AI platform for real-time wood-chip detection, physical size measurement, moisture assessment, and operator-facing quality analytics."
+>
+  <article class="page project-detail-page">
+    <header class="page-header project-detail-header">
+      <p class="project-detail-category">
+        Edge AI · Computer Vision · Intelligent Manufacturing
+      </p>
+
+      <h1 class="page-title">
+        Wood-Chip Monitor: An Edge-AI System for Real-Time Wood-Chip Quality
+        Evaluation
+      </h1>
+
+      <p class="project-detail-subtitle">
+        Transforming streaming RGB imagery into operational quality intelligence
+      </p>
+
+      <p class="project-detail-authors">
+        <strong>Amirhossein Eskorouchi</strong>, Prashant Bhattarai,
+        Abdur Rahman, Mohammad Marufuzzaman, Jason T. Street, and Haifeng Wang
+      </p>
+
+      <p class="project-detail-status">
+        <em>Proceedings of the IISE Annual Conference &amp; Expo 2026</em>
+      </p>
+
+      <p
+        class="research-entry-links"
+        aria-label="Wood-Chip Monitor resources"
+      >
+        <a
+          href="https://github.com/amirhossein-eskorouchi/Wood-Chip-Monitor"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Code
+        </a>
+        <span aria-hidden="true">/</span>
+        <a
+          href="https://youtu.be/qj1mIFlJkpU"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Video demo
+        </a>
+        <span aria-hidden="true">/</span>
+        <a
+          href="https://www.researchgate.net/profile/Amirhossein-Eskorouchi-2/publication/403332259_An_Edge_Artificial_Intelligence_System_for_Wood_Chip_Quality_Evaluation/links/69cbe89c60c0371a60f4e48f/An-Edge-Artificial-Intelligence-System-for-Wood-Chip-Quality-Evaluation.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Conference paper
+        </a>
+        <span aria-hidden="true">/</span>
+        <a
+          href="https://doi.org/10.5281/zenodo.18392693"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Dataset
+        </a>
+      </p>
+    </header>
+
+    <figure class="project-hero-figure">
+      <a
+        href="/images/projects/wood-chip-monitor/system-overview.png"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open the full-resolution Wood-Chip Monitor system overview"
+      >
+        <img
+          src="/images/projects/wood-chip-monitor/system-overview.png"
+          alt="Wood-Chip Monitor workflow from RGB acquisition through TensorRT-optimized geometry and moisture inference to operational intelligence"
+          width="2047"
+          height="986"
+        />
+      </a>
+
+      <figcaption>
+        The system combines acquisition, TensorRT-optimized geometry and
+        moisture inference, and an operational intelligence layer in one local
+        edge deployment.
+      </figcaption>
+    </figure>
+
+    <section class="content-section">
+      <h2>From periodic sampling to operational intelligence</h2>
+
+      <p>
+        Wood-chip quality affects process stability, product consistency, and
+        energy efficiency in pulp, paper, and bioenergy manufacturing.
+        Conventional assessment commonly depends on periodic manual sampling
+        and offline measurements, limiting how quickly operators can respond to
+        changes in chip geometry or moisture condition.
+      </p>
+
+      <p>
+        Wood-Chip Monitor was developed as a portable edge-AI platform that
+        moves visual quality assessment closer to the production environment.
+        It transforms a live RGB stream into physical measurements,
+        population-level statistics, quality alerts, and operator-facing
+        information without requiring cloud inference for the primary
+        inspection workflow.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>End-to-end system architecture</h2>
+
+      <p>
+        The platform connects three layers. The acquisition layer captures
+        streaming RGB imagery using the portable camera system. The inference
+        layer executes TensorRT-optimized geometry and moisture models on
+        NVIDIA Jetson hardware. The operational layer converts the resulting
+        measurements into rolling statistics, size distributions, oversize
+        alarms, moisture summaries, live annotations, and configurable quality
+        controls.
+      </p>
+
+      <p>
+        This design moves beyond a model-only demonstration by connecting
+        computer vision with calibration, physical measurement, data
+        persistence, backend services, device monitoring, and a browser-based
+        operator interface.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Geometry and moisture intelligence</h2>
+
+      <p>
+        The geometry engine uses a DETR-based detector to localize individual
+        chips in dense and overlapping scenes. Scene calibration converts
+        image-space detections into physical dimensions, which are aggregated
+        into rolling size-distribution statistics and evaluated against
+        configurable oversize thresholds. The associated UOT-DETR research
+        introduces a distributionally constrained training objective to
+        improve recovery of the observed chip population.
+      </p>
+
+      <p>
+        The moisture engine uses MoistNetLite, a lightweight vision model, to
+        classify selected chip regions as dry, medium, or wet. A configurable
+        Top-K strategy limits moisture inference to representative
+        high-confidence detections, bounding the computational cost in dense
+        scenes while preserving a live frame-level moisture summary.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Selected outcomes</h2>
+
+      <ul>
+        <li>Geometry-engine mAR50: 95%</li>
+        <li>Reported size-distribution error: KL = 0.04</li>
+        <li>Moisture-classification accuracy: 91%</li>
+        <li>TensorRT-optimized execution on an NVIDIA Jetson edge device</li>
+        <li>Local browser dashboard for live monitoring and quality control</li>
+        <li><strong>Finalist, 2026 IISE DAIS Student Mobile/Web App Competition</strong></li>
+      </ul>
+
+      <p>
+        Together, these components demonstrate the complete translation of
+        research methods into a portable intelligent system for real-time
+        manufacturing decision support.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>System demonstration</h2>
+
+      <p>
+        The demonstration shows the deployed monitoring workflow, including
+        live camera inference, detected and measured chips, rolling quality
+        statistics, oversize alerts, and moisture information.
+      </p>
+    </section>
+
+    <figure class="project-video">
+      <div class="project-video-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/qj1mIFlJkpU"
+          title="Wood-Chip Monitor system demonstration"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <figcaption>
+        Demonstration of the Wood-Chip Monitor edge-AI inspection platform.
+      </figcaption>
+    </figure>
+
+    <section class="content-section">
+      <h2>Deployed interface and portable prototype</h2>
+
+      <p>
+        The dashboard provides live inspection imagery, physical size
+        statistics, distribution summaries, oversize status, moisture
+        estimates, configurable rules, event history, audit information, and
+        device status. The physical prototype integrates the camera, Jetson
+        computer, local display, and custom enclosure into a portable platform.
+      </p>
+    </section>
+
+    <div class="project-media-grid">
+      <figure>
+        <a
+          href="/images/projects/wood-chip-monitor/dashboard.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the full-resolution Wood-Chip Monitor dashboard"
+        >
+          <img
+            src="/images/projects/wood-chip-monitor/dashboard.png"
+            alt="Wood-Chip Monitor dashboard showing live detections, size-distribution analytics, oversize alerts, and moisture information"
+            width="1920"
+            height="1080"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          Operator dashboard with live inspection and quality analytics.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <a
+          href="/images/projects/wood-chip-monitor/prototype.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the full-resolution Wood-Chip Monitor prototype"
+        >
+          <img
+            src="/images/projects/wood-chip-monitor/prototype.png"
+            alt="Portable Wood-Chip Monitor prototype integrating a camera, display, edge computer, handle, and custom enclosure"
+            width="509"
+            height="449"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          Portable edge-computing and imaging prototype.
+        </figcaption>
+      </figure>
+    </div>
+
+    <section class="content-section">
+      <h2>Connected research ecosystem</h2>
+
+      <p>
+        Wood-Chip Monitor is the deployment layer of a broader research
+        program. UOT-DETR provides the distributionally constrained geometry
+        engine, the WoodChip-Detection dataset supports dense detection and
+        measurement research, and MoistNetLite supplies the lightweight
+        moisture component. The public repository preserves the application,
+        model definitions, validation records, deployment documentation, and
+        hardware CAD files.
+      </p>
+
+      <p>
+        <a
+          href="https://github.com/amirhossein-eskorouchi/UOT-DETR"
+          target="_blank"
+          rel="noreferrer"
+        >
+          UOT-DETR
+        </a>
+        <span aria-hidden="true"> · </span>
+        <a
+          href="https://doi.org/10.1016/j.eswa.2024.125363"
+          target="_blank"
+          rel="noreferrer"
+        >
+          MoistNet
+        </a>
+        <span aria-hidden="true"> · </span>
+        <a
+          href="https://doi.org/10.5281/zenodo.18392693"
+          target="_blank"
+          rel="noreferrer"
+        >
+          WoodChip-Detection dataset
+        </a>
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Project support</h2>
+
+      <p>
+        USDA-NIFA. Physical prototype development was associated with the AI2F
+        Summer 2025 program.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <p>
+        <a href="/">Return to the homepage</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/projects">View all projects</a>
+      </p>
+    </section>
+  </article>
+</BaseLayout>

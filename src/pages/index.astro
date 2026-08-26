@@ -333,6 +333,112 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </article>
 
+    <article class="research-entry">
+      <figure class="research-entry-figure">
+        <a
+          href="/images/projects/wood-chip-monitor/system-overview.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the full-resolution Wood-Chip Monitor system overview"
+        >
+          <img
+            class="research-entry-image"
+            src="/images/projects/wood-chip-monitor/system-overview.png"
+            alt="Wood-Chip Monitor workflow transforming streaming RGB imagery through TensorRT-optimized geometry and moisture inference into operational quality intelligence"
+            width="2047"
+            height="986"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          Wood-Chip Monitor transforms streaming RGB imagery into local,
+          operator-facing quality intelligence.
+        </figcaption>
+      </figure>
+
+      <div class="research-entry-content">
+        <h3>
+          <a href="/projects/wood-chip-monitor">
+            Wood-Chip Monitor: An Edge-AI System for Real-Time Wood-Chip
+            Quality Evaluation
+          </a>
+        </h3>
+
+        <p class="research-entry-authors">
+          <strong>Amirhossein Eskorouchi</strong>, Prashant Bhattarai,
+          Abdur Rahman, Mohammad Marufuzzaman, Jason T. Street, and
+          Haifeng Wang
+        </p>
+
+        <p class="research-entry-status">
+          <em>Proceedings of the IISE Annual Conference &amp; Expo 2026</em>
+        </p>
+
+        <p
+          class="research-entry-links"
+          aria-label="Wood-Chip Monitor resources"
+        >
+          <a
+            href="https://github.com/amirhossein-eskorouchi/Wood-Chip-Monitor"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Code
+          </a>
+          <span aria-hidden="true">/</span>
+          <a
+            href="https://youtu.be/qj1mIFlJkpU"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Demo
+          </a>
+          <span aria-hidden="true">/</span>
+          <a
+            href="https://www.researchgate.net/profile/Amirhossein-Eskorouchi-2/publication/403332259_An_Edge_Artificial_Intelligence_System_for_Wood_Chip_Quality_Evaluation/links/69cbe89c60c0371a60f4e48f/An-Edge-Artificial-Intelligence-System-for-Wood-Chip-Quality-Evaluation.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Paper
+          </a>
+          <span aria-hidden="true">/</span>
+          <a href="/projects/wood-chip-monitor">Project page</a>
+        </p>
+
+        <div class="research-entry-details">
+          <p>
+            <strong>Description:</strong>{" "}
+            Conventional wood-chip quality assessment relies heavily on
+            periodic sampling and offline measurements. Wood-Chip Monitor
+            moves this process closer to real-time operations through a
+            portable NVIDIA Jetson and TensorRT platform that combines dense
+            chip detection, physical size estimation, size-distribution
+            monitoring, oversize alerts, and image-based moisture assessment.
+            A local dashboard converts the model outputs into rolling
+            statistics, configurable quality rules, event records, and live
+            visual feedback for operators.
+          </p>
+
+          <p>
+            <strong>Outcome:</strong>{" "}
+            The project translates research models into a complete edge-AI
+            prototype spanning image acquisition, accelerated inference,
+            physical measurement, quality analytics, backend services, and an
+            operator-facing interface. The geometry engine achieved an mAR50
+            of 95% with a reported size-distribution error of KL = 0.04, while
+            the lightweight moisture engine achieved 91% classification
+            accuracy. Wood-Chip Monitor was also selected as a <strong>finalist in the
+            2026 IISE DAIS Student Mobile/Web App Competition</strong>.
+          </p>
+
+          <p class="research-entry-support">
+            <strong>Project support:</strong>{" "}USDA-NIFA
+          </p>
+        </div>
+      </div>
+    </article>
+
     <p class="section-follow-link">
       <a href="/research">View the complete research overview</a>
     </p>
