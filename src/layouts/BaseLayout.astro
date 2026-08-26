@@ -1,0 +1,118 @@
+﻿---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Professional website of Amirhossein Eskorouchi, Ph.D. Candidate in Industrial and Systems Engineering at Mississippi State University.",
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const navigation = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Research", href: "/research" },
+  { label: "Publications", href: "/publications" },
+  { label: "Projects", href: "/projects" },
+  { label: "Teaching", href: "/teaching" },
+  { label: "CV", href: "/cv" },
+];
+
+const isActive = (href: string) => {
+  if (href === "/") {
+    return currentPath === "/";
+  }
+
+  return currentPath === href || currentPath.startsWith(`${href}/`);
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Amirhossein Eskorouchi" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="site-name" href="/">Amirhossein Eskorouchi</a>
+
+        <button
+          class="menu-button"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+        >
+          Menu
+        </button>
+
+        <nav id="site-navigation" class="site-navigation" aria-label="Primary navigation">
+          {
+            navigation.map((item) => (
+              <a
+                href={item.href}
+                class:list={{ active: isActive(item.href) }}
+                aria-current={isActive(item.href) ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© {new Date().getFullYear()} Amirhossein Eskorouchi</p>
+
+        <div class="footer-links">
+          <a href="mailto:ae1028@msstate.edu">Email</a>
+          <a href="https://github.com/amirhossein-eskorouchi" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/amirhossein-eskorouchii/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuButton = document.querySelector(".menu-button");
+      const navigation = document.querySelector(".site-navigation");
+
+      menuButton?.addEventListener("click", () => {
+        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        navigation?.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>
+
+
