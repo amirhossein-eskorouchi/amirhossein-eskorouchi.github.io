@@ -593,6 +593,13 @@ a:hover {
   font-size: 0.95rem;
 }
 
+.publication-release-note {
+  margin: -5px 0 16px;
+  color: #b42318;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
 .research-entry-details p {
   margin: 0 0 14px;
 }
