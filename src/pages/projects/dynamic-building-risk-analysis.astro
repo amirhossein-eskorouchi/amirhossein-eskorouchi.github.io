@@ -1,0 +1,461 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Dynamic Building Risk Analysis | Amirhossein Eskorouchi"
+  description="An interactive Streamlit dashboard for scenario-based multi-hazard building risk screening and discounted cumulative risk analysis."
+>
+  <article class="project-page">
+    <header class="project-header">
+      <p class="project-kicker">
+        Decision Support &middot; Risk Analysis &middot; Geospatial Visualization
+      </p>
+
+      <h1>Dynamic Building Risk Analysis</h1>
+
+      <p class="project-summary">
+        A configurable dashboard for exploring how building characteristics,
+        hazard scenarios, annual probabilities, and financial assumptions
+        influence scenario-based risk estimates.
+      </p>
+
+      <p class="project-links">
+        <a
+          href="https://github.com/amirhossein-eskorouchi/Dynamic-Building-Risk-Analysis"
+          target="_blank"
+          rel="noreferrer"
+        >
+          View code
+        </a>
+      </p>
+    </header>
+
+    <figure class="project-hero-figure">
+      <a
+        href="/images/projects/dynamic-building-risk-analysis/dashboard-overview.png"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open the full-resolution Dynamic Building Risk dashboard"
+      >
+        <img
+          src="/images/projects/dynamic-building-risk-analysis/dashboard-overview.png"
+          alt="Full Dynamic Building Risk Assessment dashboard showing configuration controls, hazard scenarios, financial metrics, a satellite map, and ranked cumulative risk"
+          width="2047"
+          height="1017"
+        />
+      </a>
+
+      <figcaption>
+        The complete assessment workspace combines scenario configuration,
+        summary metrics, geospatial context, risk ranking, and detailed results.
+      </figcaption>
+    </figure>
+
+    <section class="project-detail-section">
+      <h2>Project purpose</h2>
+
+      <p>
+        Building-risk decisions often require users to consider several hazard
+        types, physical characteristics, location information, and long-term
+        financial effects together. This project demonstrates how those inputs
+        can be organized into one interactive screening workflow.
+      </p>
+
+      <p>
+        The application was developed as an early Ph.D. proof of concept and
+        later refreshed for reliable demonstration and portfolio presentation.
+        The original scenario assumptions and calculation structure were
+        preserved while the interface, mapping workflow, visual hierarchy, and
+        reproducibility documentation were improved.
+      </p>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Assessment workflow</h2>
+
+      <div class="project-fact-grid">
+        <div>
+          <h3>Building profile</h3>
+          <p>
+            Users configure occupancy, construction type, building size,
+            elevation, and proximity to the hazard source.
+          </p>
+        </div>
+
+        <div>
+          <h3>Hazard scenarios</h3>
+          <p>
+            The assessment supports hurricanes, storm surge, rainfall,
+            earthquakes, floods, windstorms, snow and ice, landslides, and
+            fire hazards.
+          </p>
+        </div>
+
+        <div>
+          <h3>Financial horizon</h3>
+          <p>
+            A discount rate and planning period convert expected annual risk
+            into discounted cumulative exposure.
+          </p>
+        </div>
+
+        <div>
+          <h3>Geospatial context</h3>
+          <p>
+            Satellite and OpenStreetMap basemaps show the assessment location,
+            with an optional MapLibre-based 3D view.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Scenario configuration</h2>
+
+      <figure class="project-wide-figure">
+        <a
+          href="/images/projects/dynamic-building-risk-analysis/hazard-scenarios.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the full-resolution hazard-scenario configuration"
+        >
+          <img
+            src="/images/projects/dynamic-building-risk-analysis/hazard-scenarios.png"
+            alt="Hazard configuration interface with selected natural hazards and scenario severity controls"
+            width="1851"
+            height="660"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          Users select the hazards included in the assessment and assign one
+          probability-and-severity scenario to each selected hazard.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Risk calculations</h2>
+
+      <div class="calculation-grid">
+        <div>
+          <p class="calculation-label">Expected annual risk</p>
+          <p class="calculation-expression">
+            Annual risk = scenario probability &times; potential damage
+          </p>
+        </div>
+
+        <div>
+          <p class="calculation-label">Discounted cumulative risk</p>
+          <p class="calculation-expression">
+            NPV = sum of annual risk / (1 + discount rate)<sup>t</sup>
+          </p>
+        </div>
+      </div>
+
+      <p>
+        Potential damage begins with an occupancy- and severity-specific base
+        value. The application then applies multipliers for building size,
+        construction type, elevation, proximity, and the selected hazard type.
+        Results are calculated independently for every selected scenario and
+        aggregated for dashboard reporting.
+      </p>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Spatial and financial interpretation</h2>
+
+      <div class="project-media-grid">
+        <figure>
+          <a
+            href="/images/projects/dynamic-building-risk-analysis/satellite-location.png"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open the full-resolution assessment-location map"
+          >
+            <img
+              src="/images/projects/dynamic-building-risk-analysis/satellite-location.png"
+              alt="Satellite map showing the selected building assessment location"
+              width="958"
+              height="646"
+              loading="lazy"
+            />
+          </a>
+
+          <figcaption>
+            The selected coordinates provide geographic context for the
+            assessment rather than automatically determining hazard exposure.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <a
+            href="/images/projects/dynamic-building-risk-analysis/risk-concentration.png"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open the full-resolution hazard-risk ranking"
+          >
+            <img
+              src="/images/projects/dynamic-building-risk-analysis/risk-concentration.png"
+              alt="Horizontal bar chart ranking selected hazards by discounted cumulative risk"
+              width="814"
+              height="463"
+              loading="lazy"
+            />
+          </a>
+
+          <figcaption>
+            Hazard ranking reveals which selected scenario contributes most
+            strongly to cumulative risk under the configured assumptions.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Detailed hazard breakdown</h2>
+
+      <figure class="project-wide-figure">
+        <a
+          href="/images/projects/dynamic-building-risk-analysis/hazard-breakdown.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the full-resolution hazard results table"
+        >
+          <img
+            src="/images/projects/dynamic-building-risk-analysis/hazard-breakdown.png"
+            alt="Detailed results table containing hazard, scenario, severity, annual probability, potential damage, annual risk, and cumulative net present value"
+            width="1828"
+            height="466"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          The results table preserves the full calculation trail for each
+          selected hazard, including probability, damage, annual risk, and
+          discounted cumulative risk.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Technical implementation</h2>
+
+      <ul>
+        <li>
+          Streamlit provides the interactive building, hazard, financial, and
+          location controls.
+        </li>
+        <li>
+          Pandas structures the scenario results and prepares the detailed
+          assessment table.
+        </li>
+        <li>
+          Matplotlib creates the ranked cumulative-risk visualization.
+        </li>
+        <li>
+          Folium and Streamlit-Folium provide satellite and OpenStreetMap views.
+        </li>
+        <li>
+          LeafMap and MapLibre support an optional API-key-enabled 3D basemap.
+        </li>
+        <li>
+          Session state preserves the latest completed assessment while users
+          inspect the resulting dashboard.
+        </li>
+      </ul>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Illustrative dashboard result</h2>
+
+      <p>
+        In the configuration shown above, seven hazards produce approximately
+        $2.92 million in combined potential damage, $0.066 million in expected
+        annual risk, and $1.69 million in discounted cumulative risk over the
+        selected horizon. Hurricane and high-wind exposure is the largest
+        contributor in this illustrative scenario.
+      </p>
+
+      <p>
+        These values demonstrate the application's calculation and
+        visualization workflow. They are not general conclusions about the
+        mapped location or any real building.
+      </p>
+    </section>
+
+    <section class="project-detail-section project-note">
+      <h2>Responsible interpretation</h2>
+
+      <p>
+        This application is a scenario-based educational prototype. Its
+        probabilities, base damage values, multipliers, and hazard
+        relationships are project assumptions rather than calibrated,
+        site-specific engineering estimates. The map provides location context
+        but does not retrieve authoritative hazard data for the selected
+        coordinates.
+      </p>
+
+      <p>
+        The results should not be used for structural safety, insurance,
+        emergency management, investment, or other real-world risk decisions.
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .project-page {
+    width: 100%;
+  }
+
+  .project-header {
+    margin-bottom: 2rem;
+  }
+
+  .project-kicker {
+    color: var(--muted, #536174);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .project-header h1 {
+    max-width: 60rem;
+  }
+
+  .project-summary {
+    max-width: 58rem;
+    font-size: 1.08rem;
+  }
+
+  .project-links {
+    margin-top: 1rem;
+  }
+
+  .project-hero-figure,
+  .project-wide-figure,
+  .project-media-grid figure {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .project-hero-figure {
+    max-width: 76rem;
+    margin: 2rem auto 3rem;
+  }
+
+  .project-wide-figure {
+    max-width: 74rem;
+  }
+
+  .project-hero-figure img,
+  .project-wide-figure img,
+  .project-media-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border, #dfe5ec);
+    border-radius: 12px;
+  }
+
+  figcaption {
+    margin-top: 0.7rem;
+    color: var(--muted, #536174);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .project-detail-section {
+    margin-top: 3rem;
+  }
+
+  .project-detail-section > p,
+  .project-detail-section > ul {
+    max-width: 70rem;
+  }
+
+  .project-detail-section li + li {
+    margin-top: 0.65rem;
+  }
+
+  .project-fact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+  }
+
+  .project-fact-grid > div {
+    border-top: 1px solid var(--border, #dfe5ec);
+    padding-top: 1rem;
+  }
+
+  .project-fact-grid h3 {
+    margin: 0 0 0.45rem;
+  }
+
+  .project-fact-grid p {
+    margin: 0;
+  }
+
+  .calculation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    max-width: 70rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .calculation-grid > div {
+    background: var(--surface, #f5f8fb);
+    border: 1px solid var(--border, #dfe5ec);
+    border-radius: 12px;
+    padding: 1.2rem 1.3rem;
+  }
+
+  .calculation-label {
+    margin: 0 0 0.35rem;
+    color: var(--muted, #536174);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .calculation-expression {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .project-media-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .project-media-grid figure {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .project-note {
+    border-left: 3px solid var(--border, #dfe5ec);
+    padding-left: 1.25rem;
+  }
+
+  @media (max-width: 760px) {
+    .project-fact-grid,
+    .calculation-grid,
+    .project-media-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-detail-section {
+      margin-top: 2.25rem;
+    }
+  }
+</style>
