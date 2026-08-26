@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -231,6 +231,108 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </article>
 
+    <article class="research-entry">
+      <figure class="research-entry-figure">
+        <a
+          href="/images/projects/knowledge-informed-ece/proposed-approach.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the full-resolution Knowledge-Informed ECE architecture figure"
+        >
+          <img
+            class="research-entry-image"
+            src="/images/projects/knowledge-informed-ece/proposed-approach.png"
+            alt="Knowledge-informed constrained learning framework combining 3D SwinUNETR, anatomical segmentation, soft mask-guided pooling, and self-supervised pretraining for extracapsular extension assessment"
+            width="1264"
+            height="607"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          Anatomical knowledge constrains both representation learning and the
+          evidence used for ECE classification.
+        </figcaption>
+      </figure>
+
+      <div class="research-entry-content">
+        <h3>
+          <a href="/projects/knowledge-informed-ece">
+            Knowledge-Informed Constrained Learning for Data-Efficient
+            Extracapsular Extension Assessment in Head and Neck CT
+          </a>
+        </h3>
+
+        <p class="research-entry-authors">
+          <strong>Amirhossein Eskorouchi</strong>, William Neil Duggar, and
+          Haifeng Wang
+        </p>
+
+        <p class="research-entry-status">
+          Under review at <em>Medical Image Analysis</em>
+        </p>
+
+        <p
+          class="research-entry-links"
+          aria-label="Knowledge-Informed ECE resources"
+        >
+          <a
+            href="https://github.com/amirhossein-eskorouchi/Knowledge-Informed-ECE"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Code
+          </a>
+          <span aria-hidden="true">/</span>
+          <a
+            href="https://www.researchgate.net/profile/Amirhossein-Eskorouchi-2/publication/392593672_Knowledge-Informed_Automated_Extracapsular_Extension_Detection_in_Head_and_Neck_Cancer/links/689bede6daa95834904ecd69/Knowledge-Informed-Automated-Extracapsular-Extension-Detection-in-Head-and-Neck-Cancer.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Conference paper
+          </a>
+          <span aria-hidden="true">/</span>
+          <a href="/projects/knowledge-informed-ece">Project page</a>
+        </p>
+
+        <div class="research-entry-details">
+          <p>
+            <strong>Description:</strong>{" "}
+            Extracapsular extension, the spread of cancer beyond a lymph-node
+            capsule, is a major prognostic factor in head and neck cancer, but
+            its preoperative identification on CT is difficult because the
+            imaging signs are subtle and pathology-confirmed labels are scarce.
+            Rather than learning from the entire scan or using segmentation
+            only as preprocessing, this framework embeds lymph-node anatomy
+            directly into both feature learning and decision-making. A
+            dual-output 3D SwinUNETR jointly localizes nodal and perinodal
+            regions and classifies ECE, while the predicted mask forms soft
+            spatial weights that determine which latent features reach the
+            classifier. Clinically informed mask expansion models disease
+            spread beyond the nodal boundary, and Mask-in-Mask pretraining on
+            approximately 1,500 unlabeled CT volumes improves learning under
+            limited supervision.
+          </p>
+
+          <p>
+            <strong>Outcome:</strong>{" "}
+            On 150 patients with pathology-confirmed ECE status, the proposed
+            model achieved an accuracy of 0.924, an AUC of 0.928, a sensitivity
+            of 0.926, and a segmentation Dice score of 0.821. It achieved the
+            strongest accuracy, AUC, sensitivity, and Dice among the evaluated
+            methods. At inference, the model predicts its own anatomical region
+            and uses that prediction to guide classification, preserving a
+            fully automatic pathway while grounding decisions in clinically
+            meaningful evidence.
+          </p>
+
+          <p class="research-entry-support">
+            <strong>Project support:</strong>{" "}NIH-USA
+          </p>
+        </div>
+      </div>
+    </article>
+
     <p class="section-follow-link">
       <a href="/research">View the complete research overview</a>
     </p>
@@ -249,4 +351,3 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
   </section>
 </BaseLayout>
-

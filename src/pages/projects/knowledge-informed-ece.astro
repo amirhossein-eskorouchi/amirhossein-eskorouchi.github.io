@@ -1,0 +1,188 @@
+﻿---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Knowledge-Informed ECE | Amirhossein Eskorouchi"
+  description="A knowledge-informed, self-supervised 3D learning framework that embeds lymph-node anatomy into representation learning and classification for extracapsular extension assessment in head and neck CT."
+>
+  <article class="page project-detail-page">
+    <header class="page-header project-detail-header">
+      <p class="project-detail-category">
+        Medical AI · Knowledge-Informed Learning · Clinical Decision Support
+      </p>
+
+      <h1 class="page-title">
+        Knowledge-Informed Constrained Learning for Data-Efficient
+        Extracapsular Extension Assessment in Head and Neck CT
+      </h1>
+
+      <p class="project-detail-authors">
+        <strong>Amirhossein Eskorouchi</strong>, William Neil Duggar, and
+        Haifeng Wang
+      </p>
+
+      <p class="project-detail-status">
+        Under review at <em>Medical Image Analysis</em>
+      </p>
+
+      <p
+        class="research-entry-links"
+        aria-label="Knowledge-Informed ECE resources"
+      >
+        <a
+          href="https://github.com/amirhossein-eskorouchi/Knowledge-Informed-ECE"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Code
+        </a>
+        <span aria-hidden="true">/</span>
+        <a
+          href="https://www.researchgate.net/profile/Amirhossein-Eskorouchi-2/publication/392593672_Knowledge-Informed_Automated_Extracapsular_Extension_Detection_in_Head_and_Neck_Cancer/links/689bede6daa95834904ecd69/Knowledge-Informed-Automated-Extracapsular-Extension-Detection-in-Head-and-Neck-Cancer.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Conference paper
+        </a>
+      </p>
+    </header>
+
+    <figure class="project-hero-figure">
+      <a
+        href="/images/projects/knowledge-informed-ece/proposed-approach.png"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open the full-resolution Knowledge-Informed ECE architecture figure"
+      >
+        <img
+          src="/images/projects/knowledge-informed-ece/proposed-approach.png"
+          alt="Knowledge-informed constrained learning framework combining 3D SwinUNETR, anatomical segmentation, soft mask-guided pooling, and self-supervised pretraining for extracapsular extension assessment"
+          width="1264"
+          height="607"
+        />
+      </a>
+
+      <figcaption>
+        The proposed framework embeds lymph-node anatomy into both
+        representation learning and the classification pathway, with
+        self-supervised initialization from unlabeled CT volumes.
+      </figcaption>
+    </figure>
+
+    <section class="content-section">
+      <h2>Research problem</h2>
+
+      <p>
+        Extracapsular extension occurs when cancer spreads beyond the
+        lymph-node capsule. It is an important prognostic factor in head and
+        neck cancer and can influence staging, prognosis, and treatment
+        planning. Preoperative assessment from CT remains difficult because
+        the radiologic signs may be subtle, heterogeneous, and localized
+        around the nodal boundary, while pathology-confirmed labels are
+        limited.
+      </p>
+
+      <p>
+        Conventional models may learn from the complete CT volume, including
+        anatomically unrelated structures, or use segmentation only as a
+        preprocessing or auxiliary task. Both strategies leave the classifier
+        vulnerable to irrelevant background features and provide a weak
+        connection between localization and the final clinical prediction.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Knowledge-informed constrained learning</h2>
+
+      <p>
+        The framework uses a shared dual-output 3D SwinUNETR to jointly predict
+        the lymph-node region and classify ECE. Anatomical supervision
+        therefore shapes the latent representation rather than serving only
+        as a separate preprocessing step.
+      </p>
+
+      <p>
+        The predicted anatomical mask is projected into the latent feature
+        space and normalized into soft spatial weights. These weights
+        determine which features reach the classifier, emphasizing nodal and
+        perinodal evidence while suppressing unrelated background anatomy.
+        The model consequently learns both where to look and which evidence
+        should support the final decision.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Clinical prior and data-efficient learning</h2>
+
+      <p>
+        Because ECE is defined by spread beyond the lymph-node capsule, the
+        supervision target is expanded to include clinically plausible
+        perinodal soft tissue while excluding implausible regions such as air
+        and bone. This incorporates the disease mechanism directly into model
+        training.
+      </p>
+
+      <p>
+        To address scarce pathology-confirmed labels, the encoder is
+        initialized through Mask-in-Mask self-supervised pretraining on
+        approximately 1,500 unlabeled head-and-neck CT volumes. The
+        pretraining stage learns anatomical representations at multiple
+        spatial scales before supervised fine-tuning on the ECE cohort.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Selected results</h2>
+
+      <p>
+        The study evaluated 150 patients with pathology-confirmed ECE status.
+        The proposed model achieved:
+      </p>
+
+      <ul>
+        <li>Accuracy: 0.924</li>
+        <li>AUC: 0.928</li>
+        <li>Sensitivity: 0.926</li>
+        <li>Specificity: 0.892</li>
+        <li>Lymph-node ROI segmentation Dice: 0.821</li>
+      </ul>
+
+      <p>
+        The model achieved the strongest accuracy, AUC, sensitivity, and Dice
+        among the evaluated methods. During inference, it predicts the
+        anatomical region directly from the CT volume and uses that prediction
+        to guide classification, so no manually supplied ROI is required for
+        the final decision.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Interpretability and decision support</h2>
+
+      <p>
+        The soft spatial weights are part of the model's actual decision
+        pathway, not a post hoc explanation. They show where the classifier
+        aggregates evidence, while Grad-CAM provides a complementary analysis
+        of which regions influence the final prediction. Together with the
+        predicted anatomical mask, these outputs make it possible to examine
+        whether the decision is supported by clinically meaningful nodal and
+        perinodal evidence.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Project support</h2>
+
+      <p>NIH-USA</p>
+    </section>
+
+    <section class="content-section">
+      <p>
+        <a href="/">Return to the homepage</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/projects">View all projects</a>
+      </p>
+    </section>
+  </article>
+</BaseLayout>

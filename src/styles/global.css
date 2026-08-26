@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --background: #ffffff;
   --text: #172033;
   --heading: #080d17;
@@ -672,4 +672,12 @@ a:hover {
   .research-roadmap a {
     min-width: 820px;
   }
+}
+
+/* Consecutive homepage research entries */
+
+.research-entry + .research-entry {
+  margin-top: 0;
+  border-top: 0;
+  padding-top: 34px;
 }
