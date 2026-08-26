@@ -1,0 +1,305 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="PlantLife365 | Amirhossein Eskorouchi"
+  description="PlantLife365 is an IoT-enabled agricultural monitoring and decision-support platform integrating ESP32 sensing, optional imaging, authenticated data services, dashboards, exploratory analytics, and a local AI assistant."
+>
+  <article class="page project-detail-page">
+    <header class="page-header project-detail-header">
+      <p class="project-detail-category">
+        Smart Agriculture · Internet of Things · Machine Learning · Decision Support
+      </p>
+
+      <h1 class="page-title">
+        PlantLife365: A Multimodal Sensing and Decision-Support Platform for
+        Plant Health Management
+      </h1>
+
+      <p class="project-detail-subtitle">
+        Connecting environmental sensing, authenticated data services,
+        analytics, and an operator-facing monitoring dashboard
+      </p>
+
+      <p class="project-detail-authors">
+        <strong>Amirhossein Eskorouchi</strong>, Abhro Shome Pias,
+        Dongmin Ethan Kang, and Niraj Ghimire
+      </p>
+
+      <p class="project-detail-status">
+        <a
+          href="https://www.iise.org/Details.aspx?id=33697#:~:text=Amirhossein%20Eskorouchi"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <strong>
+            First Place, 2026 IISE Data Analytics and Information Systems
+            Division Student Mobile/Web App Competition
+          </strong>
+        </a>
+      </p>
+
+      <p class="research-entry-links" aria-label="PlantLife365 resources">
+        <a
+          href="https://github.com/amirhossein-eskorouchi/PlantLife365"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Code
+        </a>
+        <span aria-hidden="true">/</span>
+        <a
+          href="https://www.iise.org/Details.aspx?id=33697#:~:text=Amirhossein%20Eskorouchi"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Award information
+        </a>
+      </p>
+    </header>
+
+    <figure class="project-hero-figure">
+      <a
+        href="/images/projects/plantlife365/architecture.svg"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Open the full-resolution PlantLife365 architecture diagram"
+      >
+        <img
+          src="/images/projects/plantlife365/architecture.svg"
+          alt="PlantLife365 architecture connecting ESP32 edge sensing, authenticated ingestion, Django data services, monitoring dashboards, exploratory analytics, and an optional local AI assistant"
+          width="1400"
+          height="820"
+        />
+      </a>
+
+      <figcaption>
+        The maintained PlantLife365 architecture connects edge sensing,
+        authenticated ingestion, user-scoped monitoring, exploratory analytics,
+        and optional local assistance.
+      </figcaption>
+    </figure>
+
+    <section class="content-section">
+      <h2>Research objective</h2>
+
+      <p>
+        Plant-health decisions depend on environmental conditions that change
+        continuously, but conventional observation often relies on
+        disconnected measurements and manual inspection. Important changes in
+        moisture, temperature, humidity, light, or gas conditions may therefore
+        be difficult to identify early or evaluate in their temporal context.
+      </p>
+
+      <p>
+        PlantLife365 was developed to validate an AI-powered multimodal sensing
+        and data-collection platform for plant health management. The project
+        connects physical sensing with secure software infrastructure so that
+        environmental measurements can be collected, organized, visualized,
+        analyzed, and converted into information that supports timely
+        monitoring decisions.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Multimodal sensing hardware</h2>
+
+      <p>
+        The edge node is built around an ESP32 microcontroller and acquires
+        temperature, humidity, soil-moisture, ambient-light, and gas
+        measurements, with support for optional image capture. The integrated
+        sensor package provides complementary information about the plant and
+        its surrounding environment rather than relying on a single
+        measurement modality.
+      </p>
+
+      <p>
+        MicroPython firmware manages sensor acquisition and transfers telemetry
+        to the web platform. Each registered hardware device uses a device
+        secret, and incoming payloads are checked for required fields, numeric
+        validity, finite values, and application-level ranges before they are
+        stored.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Authenticated monitoring and data services</h2>
+
+      <p>
+        A Django application provides the persistence, data-access, and
+        monitoring layers. Measurements remain associated with the
+        authenticated user's registered devices, allowing current readings,
+        historical records, rolling and daily statistics, alerts, system logs,
+        and exported data to be managed within a user-scoped workflow.
+      </p>
+
+      <p>
+        The dashboard presents live sensor conditions and temporal trends in a
+        browser-based interface. Users can review alert states, filter
+        historical records, examine changes across sensors, and export their
+        data for further analysis.
+      </p>
+    </section>
+
+    <div class="project-media-grid">
+      <figure>
+        <a
+          href="/images/projects/plantlife365/dashboard.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the full-resolution PlantLife365 dashboard"
+        >
+          <img
+            src="/images/projects/plantlife365/dashboard.png"
+            alt="PlantLife365 dashboard showing live temperature, humidity, moisture, brightness, gas readings, alerts, and historical sensor trends"
+            width="2048"
+            height="1109"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          Browser dashboard with live sensor summaries, alert status,
+          historical trends, filtering, analytics, and data export.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <a
+          href="/images/projects/plantlife365/sensor-hardware.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the full-resolution PlantLife365 sensor hardware diagram"
+        >
+          <img
+            src="/images/projects/plantlife365/sensor-hardware.png"
+            alt="PlantLife365 ESP32 sensor configuration with soil-moisture, light, temperature, humidity, and methane gas sensors"
+            width="1317"
+            height="715"
+            loading="lazy"
+          />
+        </a>
+
+        <figcaption>
+          ESP32-based multisensor configuration for environmental data
+          acquisition and transfer to the monitoring application.
+        </figcaption>
+      </figure>
+    </div>
+
+    <section class="content-section">
+      <h2>Exploratory machine-learning analytics</h2>
+
+      <p>
+        PlantLife365 includes a controlled tabular regression workflow for
+        research exploration. Available methods include linear regression,
+        random forest regression, gradient boosting regression, support vector
+        regression, and K-nearest neighbors regression. The workflow reports
+        MAE, RMSE, R-squared, actual-versus-predicted diagnostics, and
+        model-specific descriptive feature scores where available.
+      </p>
+
+      <p>
+        These tools are intended for exploratory analysis of user-provided
+        sensor data. They are not presented as a validated agronomic forecasting
+        or recommendation model. This distinction keeps the platform useful for
+        research while clearly separating analytical experimentation from
+        verified agricultural guidance.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Optional local AI assistance</h2>
+
+      <p>
+        The maintained application also supports an optional local
+        Ollama-compatible assistant. When enabled, the assistant receives a
+        compact context assembled from the authenticated user's current
+        monitoring information and recent user-owned logs.
+      </p>
+
+      <p>
+        The local design supports privacy-conscious experimentation and keeps
+        monitoring context scoped to the authenticated user. Generated
+        responses remain advisory interface output and are not treated as
+        verified agronomic recommendations.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Selected capabilities</h2>
+
+      <ul>
+        <li>ESP32-based multimodal environmental sensing and optional imaging</li>
+        <li>Per-device authenticated telemetry ingestion</li>
+        <li>User-scoped current and historical monitoring data</li>
+        <li>Rolling statistics, daily summaries, alerts, and system logs</li>
+        <li>Date-based queries and CSV data export</li>
+        <li>Controlled exploratory regression analytics</li>
+        <li>Optional local AI assistant grounded in user-owned monitoring context</li>
+        <li>Automated tests and continuous integration for the maintained software</li>
+      </ul>
+    </section>
+
+    <section class="content-section">
+      <h2>Recognition</h2>
+
+      <p>
+        <a
+          href="https://www.iise.org/Details.aspx?id=33697#:~:text=Amirhossein%20Eskorouchi"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <strong>
+            PlantLife365 received First Place in the 2026 IISE Data Analytics
+            and Information Systems Division Student Mobile/Web App Competition.
+          </strong>
+        </a>
+      </p>
+
+      <p>
+        The recognition reflects the project's integration of physical sensing,
+        data engineering, machine learning, full-stack software development,
+        and user-facing decision support into a functioning system.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Reproducible research software</h2>
+
+      <p>
+        The public repository preserves the ESP32 firmware, Django application,
+        data services, analytics workflow, tests, documentation, dependency
+        records, validation scripts, and system architecture. Historical
+        experimental branches are documented separately from the maintained
+        functionality so that the current software baseline remains clear and
+        reproducible.
+      </p>
+
+      <p>
+        <a
+          href="https://github.com/amirhossein-eskorouchi/PlantLife365"
+          target="_blank"
+          rel="noreferrer"
+        >
+          View the PlantLife365 repository
+        </a>
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Project support</h2>
+
+      <p>Mississippi Institutions of Higher Learning</p>
+    </section>
+
+    <section class="content-section">
+      <p>
+        <a href="/">Return to the homepage</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/projects">View all projects</a>
+      </p>
+    </section>
+  </article>
+</BaseLayout>
