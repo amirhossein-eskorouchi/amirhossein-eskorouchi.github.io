@@ -1,78 +1,314 @@
-﻿---
+---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
   title="About | Amirhossein Eskorouchi"
-  description="Biography and professional background of Amirhossein Eskorouchi."
+  description="Professional background, capabilities, education, leadership, and recognition of Amirhossein Eskorouchi."
 >
-  <article class="page">
-    <header class="page-header">
+  <article class="page about-page">
+    <div class="about-intro-grid">
+      <header class="page-header about-header">
       <h1 class="page-title">About</h1>
-      <p class="page-introduction">
-        Researcher, engineer, educator, and Ph.D. Candidate at Mississippi State University.
+
+      <p class="about-opening">
+        Engineer by training, problem-solver by instinct.
       </p>
+
+      <p class="page-introduction">
+        I build intelligent systems for complex, real-world decisions. I care
+        as much about how a solution works in practice as how it performs in an
+        experiment.
+      </p>
+
+      <blockquote class="about-quote">
+        <p>
+          <strong>
+            <em>
+              &ldquo;The formulation of a problem is often more essential than
+              its solution.&rdquo;
+            </em>
+          </strong>
+        </p>
+
+        <footer>
+          <cite>Albert Einstein</cite>
+        </footer>
+      </blockquote>
     </header>
 
+    <section class="content-section about-perspective">
+      <h2>How I approach the work</h2>
+
+      <p>
+        My background in industrial and systems engineering shapes the way I
+        approach artificial intelligence. Before selecting a model, I ask what
+        decision the system should improve, what constraints matter, how success
+        should be measured, and what people need in order to trust and use the
+        result.
+      </p>
+
+      <p>
+        I enjoy taking projects from an initially open-ended problem to a
+        well-defined and usable outcome. That process may involve designing the
+        data strategy, developing algorithms, organizing experiments, validating
+        results, building a software prototype, and communicating the final
+        system to technical and nontechnical collaborators.
+      </p>
+
+      <p>
+        The most rewarding work for me happens where analytical depth and
+        practical implementation meet: turning a difficult scientific or
+        engineering question into something measurable, reproducible, and useful.
+      </p>
+    </section>
+    </div>
+
     <section class="content-section">
-      <h2>Biography</h2>
+      <h2>Core strengths</h2>
 
-      <p>
-        I am a Ph.D. Candidate in Industrial &amp; Systems Engineering at
-        Mississippi State University. My research combines machine learning,
-        mathematical optimization, computer vision, and intelligent system design.
-      </p>
+      <div class="strength-grid">
+        <article class="strength-card">
+          <h3>Machine learning and computer vision</h3>
+          <p>
+            Designing and evaluating learning systems for classification,
+            detection, visual measurement, and decision support.
+          </p>
+        </article>
 
-      <p>
-        I am particularly interested in developing methods that connect rigorous
-        learning objectives with domain knowledge and practical decision requirements.
-        My work has included applications in manufacturing quality monitoring,
-        medical imaging, agricultural robotics, and data-driven decision systems.
-      </p>
+        <article class="strength-card">
+          <h3>Optimization and decision modeling</h3>
+          <p>
+            Translating operational requirements, uncertainty, and domain
+            constraints into structured analytical objectives.
+          </p>
+        </article>
 
-      <p>
-        Alongside research, I have experience in teaching, student mentoring,
-        interdisciplinary collaboration, research software development, and
-        translating technical ideas into deployable systems.
-      </p>
+        <article class="strength-card">
+          <h3>End-to-end system development</h3>
+          <p>
+            Connecting data, models, software, sensors, dashboards, and
+            deployment-oriented prototypes into complete working systems.
+          </p>
+        </article>
+
+        <article class="strength-card">
+          <h3>Technical leadership and collaboration</h3>
+          <p>
+            Organizing interdisciplinary work, mentoring developing researchers,
+            and communicating technical decisions clearly.
+          </p>
+        </article>
+      </div>
     </section>
 
     <section class="content-section">
-      <h2>Current position</h2>
+      <h2>Education</h2>
 
-      <p>
-        <strong>Ph.D. Candidate, Industrial &amp; Systems Engineering</strong><br />
-        Mississippi State University<br />
-        Starkville, Mississippi
-      </p>
+      <div class="education-list">
+        <article class="education-entry">
+          <div class="education-period">2024 to Present</div>
+          <div>
+            <h3>Ph.D. in Industrial and Systems Engineering</h3>
+            <p>
+              Mississippi State University
+              <span class="education-detail">Anticipated May 2027</span>
+            </p>
+          </div>
+        </article>
+
+        <article class="education-entry">
+          <div class="education-period">2021</div>
+          <div>
+            <h3>M.S. in Industrial Engineering</h3>
+            <p>Iran University of Science and Technology</p>
+          </div>
+        </article>
+
+        <article class="education-entry">
+          <div class="education-period">2018</div>
+          <div>
+            <h3>B.S. in Industrial Engineering</h3>
+            <p>Garmsar University</p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="content-section">
       <h2>Professional interests</h2>
 
-      <ul>
-        <li>Machine learning and deep learning</li>
-        <li>Mathematical optimization</li>
-        <li>Computer vision and visual measurement</li>
-        <li>Reliable and interpretable artificial intelligence</li>
-        <li>Intelligent engineering and decision systems</li>
-        <li>Research software and deployment-oriented prototyping</li>
+      <p class="section-introduction">
+        I am especially interested in problems where a technically strong model
+        must also remain reliable, interpretable, and useful under real operating
+        conditions.
+      </p>
+
+      <ul class="interest-list">
+        <li>
+          Extracting meaningful measurements and decisions from visual data
+        </li>
+        <li>
+          Learning effectively from limited, heterogeneous, or imperfect data
+        </li>
+        <li>
+          Incorporating evidence, constraints, and domain knowledge into AI
+        </li>
+        <li>
+          Connecting predictive models with optimization and decision processes
+        </li>
+        <li>
+          Moving analytical ideas into reproducible software and usable systems
+        </li>
       </ul>
     </section>
 
     <section class="content-section">
-      <h2>Contact</h2>
+      <h2>Teaching and mentoring</h2>
 
       <p>
-        Email:
-        <a href="mailto:amir.skoruchi@gmail.com">amir.skoruchi@gmail.com</a>
+        I view teaching and mentoring as extensions of professional leadership.
+        My goal is to help students move beyond following instructions and become
+        confident in framing problems, defending technical choices, and
+        communicating their work.
       </p>
 
+      <div class="detail-grid">
+        <article>
+          <h3>Graduate mentoring</h3>
+          <p>
+            Co-mentored graduate researchers on machine learning, computer
+            vision, experimental design, and scholarly communication, with
+            collaborations leading to peer-reviewed publications.
+          </p>
+        </article>
+
+        <article>
+          <h3>Undergraduate mentoring</h3>
+          <p>
+            Mentored five undergraduate researchers in the 2026 USDA Research
+            and Extension Experiences for Undergraduates program.
+          </p>
+        </article>
+
+        <article>
+          <h3>Instruction</h3>
+          <p>
+            Delivered instruction in deep learning with PyTorch, technical
+            writing with LaTeX and Overleaf, financial engineering, and financial
+            risk management.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Leadership and professional service</h2>
+
+      <div class="detail-grid">
+        <article>
+          <h3>Professional leadership</h3>
+          <p>
+            President of the Mississippi State University INFORMS Student
+            Chapter, following service as Vice President.
+          </p>
+        </article>
+
+        <article>
+          <h3>Community leadership</h3>
+          <p>
+            Vice President of the Iranian Student Association at Mississippi
+            State University, following service as President.
+          </p>
+        </article>
+
+        <article>
+          <h3>Peer review</h3>
+          <p>
+            Reviewer for journals and conferences spanning artificial
+            intelligence, optimization, manufacturing, sustainability, and
+            engineering applications.
+          </p>
+        </article>
+
+        <article>
+          <h3>Conference service</h3>
+          <p>
+            Session Chair for a special session at the 2025 IISE Annual
+            Conference and reviewer for IISE and FAIM conference programs.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Selected recognition</h2>
+
+      <div class="recognition-list">
+        <article>
+          <span class="recognition-year">2026</span>
+          <p>
+            <a
+              href="/images/projects/plantlife365/award-certificate.png"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open the PlantLife365 First Place award certificate"
+            >
+              <strong>First Place</strong>, IISE DAIS Student Data Challenge,
+              PlantLife365
+            </a>
+          </p>
+        </article>
+
+        <article>
+          <span class="recognition-year">2026</span>
+          <p>
+            <a
+              href="/images/projects/wood-chip-monitor/award-certificate.png"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open the Wood-Chip Monitor finalist certificate"
+            >
+              <strong>Finalist</strong>, IISE DAIS Student Data Challenge,
+              Wood-Chip Monitor
+            </a>
+          </p>
+        </article>
+
+        <article>
+          <span class="recognition-year">2025</span>
+          <p>
+            <strong>Third Place</strong>, IISE DAIS Data Analytics Competition
+          </p>
+        </article>
+
+        <article>
+          <span class="recognition-year">2025</span>
+          <p>
+            <a
+              href="/images/recognition/campus-vision-challenge-certificate.jpg"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open the Campus Vision Challenge Third Place certificate"
+            >
+              <strong>Third Place</strong>, Mississippi State University AI Club
+              Campus Vision Challenge
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section connect-section">
+      <h2>Let&apos;s connect</h2>
+
       <p>
-        <a href="https://github.com/amirhossein-eskorouchi" target="_blank" rel="noreferrer">
-          GitHub
-        </a>
-        ·
+        I welcome conversations about applied AI, optimization, research
+        collaboration, and opportunities to build useful intelligent systems.
+      </p>
+
+      <div class="connect-links">
+        <a href="mailto:ae1028@msstate.edu">Email</a>
         <a
           href="https://www.linkedin.com/in/amirhossein-eskorouchii/"
           target="_blank"
@@ -80,7 +316,262 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         >
           LinkedIn
         </a>
-      </p>
+        <a
+          href="https://github.com/amirhossein-eskorouchi"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+        <a href="/cv">CV &amp; Resume</a>
+      </div>
     </section>
   </article>
 </BaseLayout>
+
+<style>
+  .about-page {
+    max-width: 1320px;
+    margin-inline: auto;
+  }
+
+  .about-intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: start;
+  }
+
+  .about-header {
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  .about-opening {
+    margin: 0 0 0.45rem;
+    color: var(--heading);
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .about-header .page-introduction {
+    max-width: 850px;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    line-height: 1.65;
+  }
+
+  .about-quote {
+    max-width: 790px;
+    margin: 2rem 0 0;
+    border-left: 4px solid var(--link);
+    background: var(--soft);
+    padding: 1.15rem 1.4rem;
+  }
+
+  .about-quote p {
+    margin: 0;
+    color: var(--heading);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.12rem, 2vw, 1.28rem);
+    line-height: 1.65;
+    letter-spacing: 0.005em;
+  }
+
+  .about-quote strong {
+    font-weight: 600;
+  }
+
+  .about-quote em {
+    font-style: italic;
+  }
+
+  .about-quote footer {
+    margin-top: 0.45rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .about-quote cite {
+    font-style: normal;
+  }
+  .content-section {
+    max-width: 1320px;
+    border-top: 1px solid var(--line);
+    padding: 2.65rem 0 0;
+    margin-top: 2.65rem;
+  }
+
+  .content-section h2 {
+    margin: 0 0 1.35rem;
+    color: var(--heading);
+    font-size: 1.55rem;
+    line-height: 1.3;
+  }
+
+  .content-section > p {
+    max-width: 970px;
+  }
+
+  .about-perspective {
+    max-width: none;
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .strength-grid,
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .strength-card,
+  .detail-grid article {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--soft);
+    padding: 1.35rem 1.45rem;
+  }
+
+  .strength-card h3,
+  .detail-grid h3 {
+    margin: 0 0 0.55rem;
+    color: var(--heading);
+    font-size: 1.08rem;
+    line-height: 1.4;
+  }
+
+  .strength-card p,
+  .detail-grid p {
+    margin: 0;
+  }
+
+  .education-list {
+    max-width: 970px;
+  }
+
+  .education-entry {
+    display: grid;
+    grid-template-columns: 145px minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .education-entry:first-child {
+    padding-top: 0;
+  }
+
+  .education-period {
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  .education-entry h3 {
+    margin: 0 0 0.25rem;
+    color: var(--heading);
+    font-size: 1.08rem;
+  }
+
+  .education-entry p {
+    margin: 0;
+  }
+
+  .education-detail {
+    display: block;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .interest-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem 2rem;
+    max-width: 1000px;
+    margin: 1.25rem 0 0;
+    padding-left: 1.3rem;
+  }
+
+  .interest-list li {
+    padding-left: 0.2rem;
+  }
+
+  .recognition-list {
+    max-width: 970px;
+  }
+
+  .recognition-list article {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: baseline;
+    border-bottom: 1px solid var(--line);
+    padding: 0.85rem 0;
+  }
+
+  .recognition-list article:first-child {
+    padding-top: 0;
+  }
+
+  .recognition-year {
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  .recognition-list p {
+    margin: 0;
+  }
+
+  .connect-section {
+    margin-bottom: 1rem;
+  }
+
+  .connect-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.3rem;
+  }
+
+  .connect-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #a7c6eb;
+    border-radius: 3px;
+    background: #eaf4ff;
+    padding: 0.55rem 1rem;
+    color: #075db8;
+  }
+
+  .connect-links a:hover {
+    border-color: var(--link);
+    background: #deefff;
+    text-decoration: none;
+  }
+
+  @media (max-width: 760px) {
+    .about-intro-grid {
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+    }
+
+    .strength-grid,
+    .detail-grid,
+    .interest-list {
+      grid-template-columns: 1fr;
+    }
+
+    .education-entry {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+
+    .recognition-list article {
+      grid-template-columns: 62px minmax(0, 1fr);
+      gap: 0.75rem;
+    }
+  }
+</style>

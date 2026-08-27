@@ -1,46 +1,1135 @@
-﻿---
+---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
   title="Publications | Amirhossein Eskorouchi"
-  description="Selected publications and scholarly outputs by Amirhossein Eskorouchi."
+  description="Journal articles, conference papers, datasets, and manuscripts by Amirhossein Eskorouchi."
 >
-  <article class="page">
-    <header class="page-header">
-      <h1 class="page-title">Publications</h1>
-      <p class="page-introduction">
-        Peer-reviewed publications and related scholarly outputs.
-      </p>
+  <article class="page publications-page">
+    <header class="publications-header">
+      <div>
+        <h1 class="page-title">Publications</h1>
+
+        <p class="page-introduction">
+          Peer-reviewed journal articles, conference papers, public datasets,
+          and ongoing manuscripts spanning artificial intelligence,
+          optimization, healthcare, manufacturing, and decision science.
+        </p>
+      </div>
+
+      <a
+        class="scholar-link"
+        href="https://scholar.google.com/citations?user=-2Gq9DsAAAAJ&amp;hl=en"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Google Scholar
+      </a>
     </header>
 
-    <p class="note">
-      This page establishes the publication structure. We will next transfer the
-      verified citations from the academic CV and connect each record to its paper,
-      project page, code, poster, presentation, and dataset where available.
-    </p>
+    <section class="publication-summary" aria-label="Publication summary">
+      <div>
+        <strong>7</strong>
+        <span>Journal articles</span>
+      </div>
 
-    <section class="content-section">
-      <h2>Organization</h2>
+      <div>
+        <strong>7</strong>
+        <span>Conference papers</span>
+      </div>
 
-      <p>
-        Publications will be presented chronologically and grouped only where doing
-        so improves navigation. Each record will use the official title, complete
-        author list, venue, year, and publication status.
-      </p>
+      <div>
+        <strong>1</strong>
+        <span>Public dataset</span>
+      </div>
 
-      <p>
-        Related materials will be linked directly beneath each citation so that
-        visitors can move from a publication to its technical evidence without
-        searching elsewhere.
-      </p>
+      <div>
+        <strong>3</strong>
+        <span>Manuscripts under review</span>
+      </div>
     </section>
 
-    <section class="content-section">
-      <p>
-        Relevant project summaries are available on the
-        <a href="/projects">Projects page</a>.
+    <section class="publication-section" id="journal-articles">
+      <header class="section-header">
+        <div>
+          <p class="section-label">Peer reviewed</p>
+          <h2>Journal articles</h2>
+        </div>
+        <span class="section-count">7 publications</span>
+      </header>
+
+      <div class="publication-list">
+        <article class="publication-record">
+          <div class="publication-number">J1</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://doi.org/10.1080/24725579.2026.2622416"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Understanding Knowledge Transferability in Differentiable
+                Architecture Search for Skin Lesion Diagnosis
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              Vo, A., He, L., <strong>Eskorouchi, A.</strong>, and Wang, H.
+            </p>
+
+            <p class="publication-venue">
+              <em>IISE Transactions on Healthcare Systems Engineering</em>,
+              16(1), 71-90, 2026.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://doi.org/10.1080/24725579.2026.2622416"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DOI
+              </a>
+              <a href="/projects/pdarts-skin-transferability">
+                Project page
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">J2</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://doi.org/10.1016/j.rineng.2025.107756"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Dempster-Shafer-Informed Levelized Cost of Energy: A Robust
+                Approach for Energy Portfolio Optimization under Deep
+                Uncertainty
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              Mohammadi, E., Karimi, M. H., <strong>Eskorouchi, A.</strong>,
+              and Ghanbari, H.
+            </p>
+
+            <p class="publication-venue">
+              <em>Results in Engineering</em>, 28, 107756, 2025.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://doi.org/10.1016/j.rineng.2025.107756"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DOI
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">J3</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://doi.org/10.22067/ijaaf.2024.44518.1402"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Exploring the Evolution of Robust Portfolio Optimization: A
+                Scientometric Analysis
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong>, Ghanbari, H., and Mohammadi, E.
+            </p>
+
+            <p class="publication-venue">
+              <em>Iranian Journal of Accounting, Auditing and Finance</em>,
+              2023.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://doi.org/10.22067/ijaaf.2024.44518.1402"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DOI
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">J4</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://doi.org/10.5267/j.jfs.2022.9.009"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Investigating the Effect of US Dollar, Gold and Oil Prices on
+                the Stock Market
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              Ghanbari, H., Larni Fooeik, A. M.,
+              <strong>Eskorouchi, A.</strong>, and Mohammadi, E.
+            </p>
+
+            <p class="publication-venue">
+              <em>Journal of Future Sustainability</em>, 2(3), 97-104, 2022.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://doi.org/10.5267/j.jfs.2022.9.009"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DOI
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">J5</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://doi.org/10.5267/j.jfs.2022.9.002"
+                target="_blank"
+                rel="noreferrer"
+              >
+                A Robust Linear Model for the Maximum Expected Coverage
+                Location Problem Considering the Relative Coverage
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              Karimi, M. H., Mohammadi, E., Jafari, H., Ghaeli, M. R., and
+              <strong>Eskorouchi, A.</strong>
+            </p>
+
+            <p class="publication-venue">
+              <em>Journal of Future Sustainability</em>, 2(2), 39-48, 2022.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://doi.org/10.5267/j.jfs.2022.9.002"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DOI
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">J6</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://doi.org/10.24200/SCI.2022.59575.6330"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Robust Portfolio Optimization Based on Evidence Theory
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong>, Mohammadi, E., and Sadjadi, S. J.
+            </p>
+
+            <p class="publication-venue">
+              <em>Scientia Iranica</em>, 2022.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://doi.org/10.24200/SCI.2022.59575.6330"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DOI
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">J7</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://doi.org/10.5267/j.msl.2022.1.001"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Uncertain Portfolio Optimization Based on Dempster-Shafer
+                Theory
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong> and Mohammadi, E.
+            </p>
+
+            <p class="publication-venue">
+              <em>Management Science Letters</em>, 12(3), 207-214, 2022.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://doi.org/10.5267/j.msl.2022.1.001"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DOI
+              </a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="publication-section" id="conference-papers">
+      <header class="section-header">
+        <div>
+          <p class="section-label">Published in proceedings</p>
+          <h2>Conference papers</h2>
+        </div>
+        <span class="section-count">7 publications</span>
+      </header>
+
+      <div class="publication-list">
+        <article class="publication-record">
+          <div class="publication-number">C1</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://doi.org/10.1109/ISBI61048.2026.11515601"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DA-GMGENet: A Domain Adaptation Framework for 3D CT-Based ECE
+                Identification in Head and Neck Cancer
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              Wang, Y., Pias, A. S., <strong>Eskorouchi, A.</strong>,
+              Duggar, W. N., Wang, H., and Fan, L.-W.
+            </p>
+
+            <p class="publication-venue">
+              <em>IEEE International Symposium on Biomedical Imaging</em>,
+              London, United Kingdom, 2026, pp. 1-4.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://doi.org/10.1109/ISBI61048.2026.11515601"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DOI
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">C2</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://www.researchgate.net/profile/Amirhossein-Eskorouchi-2/publication/403332259_An_Edge_Artificial_Intelligence_System_for_Wood_Chip_Quality_Evaluation/links/69cbe89c60c0371a60f4e48f/An-Edge-Artificial-Intelligence-System-for-Wood-Chip-Quality-Evaluation.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                An Edge Artificial Intelligence System for Wood Chip Quality
+                Evaluation
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong>, Bhattarai, P., Rahman, A.,
+              Marufuzzaman, M., Street, J. T., and Wang, H.
+            </p>
+
+            <p class="publication-venue">
+              <em>IISE Annual Conference &amp; Expo</em>, Arlington, Texas,
+              2026, pp. 1-6.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://www.researchgate.net/profile/Amirhossein-Eskorouchi-2/publication/403332259_An_Edge_Artificial_Intelligence_System_for_Wood_Chip_Quality_Evaluation/links/69cbe89c60c0371a60f4e48f/An-Edge-Artificial-Intelligence-System-for-Wood-Chip-Quality-Evaluation.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Paper
+              </a>
+              <a href="/projects/wood-chip-monitor">
+                Project page
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">C3</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://doi.org/10.1109/ISBI60581.2025.10981031"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Machine Learning-Based Polysomnography Data Analysis for ADHD
+                Diagnosis: A Focus on Sleep Stage-Based Biomarkers
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong>, Wang, H., Lee, J. W.,
+              Nayak, V. H., Ojeda, N. B., and Fan, L.-W.
+            </p>
+
+            <p class="publication-venue">
+              <em>IEEE International Symposium on Biomedical Imaging</em>,
+              Houston, Texas, 2025, pp. 1-4.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://doi.org/10.1109/ISBI60581.2025.10981031"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DOI
+              </a>
+              <a
+                href="/documents/posters/ml-psg-adhd-isbi-2025-poster.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Poster
+              </a>
+              <a href="/projects/ml-psg-adhd">
+                Project page
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">C4</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://doi.org/10.1007/978-3-032-05610-8_53"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Enhanced DETR-Based Framework for Automated Wood Chip Size
+                Distribution Estimation in High Volume Biomass Manufacturing
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong>, Rahman, A., Street, J. T.,
+              Marufuzzaman, M., and Wang, H.
+            </p>
+
+            <p class="publication-venue">
+              <em>Flexible Automation and Intelligent Manufacturing</em>,
+              Springer, 2025, pp. 540-548.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://doi.org/10.1007/978-3-032-05610-8_53"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DOI
+              </a>
+              <a
+                href="/documents/posters/enhanced-detr-wood-chip-size-poster.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Poster
+              </a>
+              <a href="/projects/uot-detr">
+                Related project
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">C5</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://www.researchgate.net/profile/Amirhossein-Eskorouchi-2/publication/392593672_Knowledge-Informed_Automated_Extracapsular_Extension_Detection_in_Head_and_Neck_Cancer/links/689bede6daa95834904ecd69/Knowledge-Informed-Automated-Extracapsular-Extension-Detection-in-Head-and-Neck-Cancer.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Knowledge-Informed Automated Extracapsular Extension Detection
+                in Head and Neck Cancer
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong>, Duggar, W. N., and Wang, H.
+            </p>
+
+            <p class="publication-venue">
+              <em>IISE Annual Conference &amp; Expo</em>, Atlanta, Georgia,
+              2025, pp. 1-6.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://www.researchgate.net/profile/Amirhossein-Eskorouchi-2/publication/392593672_Knowledge-Informed_Automated_Extracapsular_Extension_Detection_in_Head_and_Neck_Cancer/links/689bede6daa95834904ecd69/Knowledge-Informed-Automated-Extracapsular-Extension-Detection-in-Head-and-Neck-Cancer.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Paper
+              </a>
+              <a href="/projects/knowledge-informed-ece">
+                Project page
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">C6</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://www.researchgate.net/profile/Amirhossein-Eskorouchi-2/publication/392594073_Automated_Wood_Chip_Size_Estimation_with_YOLO-Based_Object_Detection/links/6849c7e04c64e82b927f44e0/Automated-Wood-Chip-Size-Estimation-with-YOLO-Based-Object-Detection.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Automated Wood Chip Size Estimation with YOLO-Based Object
+                Detection
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong>, Rahman, A., Marufuzzaman, M.,
+              Street, J. T., and Wang, H.
+            </p>
+
+            <p class="publication-venue">
+              <em>IISE Annual Conference &amp; Expo</em>, Atlanta, Georgia,
+              2025, pp. 1-6.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://www.researchgate.net/profile/Amirhossein-Eskorouchi-2/publication/392594073_Automated_Wood_Chip_Size_Estimation_with_YOLO-Based_Object_Detection/links/6849c7e04c64e82b927f44e0/Automated-Wood-Chip-Size-Estimation-with-YOLO-Based-Object-Detection.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Paper
+              </a>
+              <a href="/projects/uot-detr">
+                Related project
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">C7</div>
+
+          <div>
+            <h3>
+              Wood Chip Moisture Content Assessment Using Infrared Image-Based
+              Machine Learning
+            </h3>
+
+            <p class="publication-authors">
+              Rahman, A., <strong>Eskorouchi, A.</strong>, Street, J. T.,
+              Wooten, J., Marufuzzaman, M., and Wang, H.
+            </p>
+
+            <p class="publication-venue">
+              <em>ASABE International Meeting</em>, Anaheim, California,
+              2024, pp. 1-12.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="/documents/posters/infrared-wood-chip-moisture-poster.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Poster
+              </a>
+              <a href="/projects/wood-chip-monitor">
+                Related project
+              </a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="publication-section" id="public-dataset">
+      <header class="section-header">
+        <div>
+          <p class="section-label">Open research resource</p>
+          <h2>Data publication</h2>
+        </div>
+        <span class="section-count">1 dataset</span>
+      </header>
+
+      <div class="publication-list">
+        <article class="publication-record featured-record">
+          <div class="publication-number">D1</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://doi.org/10.5281/zenodo.18392693"
+                target="_blank"
+                rel="noreferrer"
+              >
+                WoodChip-Detection: A Public Dataset for Dense Wood Chip
+                Detection and Instance Segmentation
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong>, Street, J. T., Wooten, J.,
+              Marufuzzaman, M., and Wang, H.
+            </p>
+
+            <p class="publication-venue">
+              <em>Zenodo</em>, Version 1.0, 2026.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://doi.org/10.5281/zenodo.18392693"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Dataset
+              </a>
+              <a href="/projects/uot-detr">
+                Related project
+              </a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="publication-section" id="under-review">
+      <header class="section-header">
+        <div>
+          <p class="section-label">Ongoing scholarship</p>
+          <h2>Manuscripts under review</h2>
+        </div>
+        <span class="section-count">3 manuscripts</span>
+      </header>
+
+      <p class="section-note">
+        Supporting project and data links are provided where public materials
+        are available. Manuscript links will be added after publication.
       </p>
+
+      <div class="publication-list">
+        <article class="publication-record">
+          <div class="publication-number">R1</div>
+
+          <div>
+            <span class="status-badge">First review</span>
+
+            <h3>
+              Distributionally Constrained Visual Quality Measurement Using
+              Unbalanced Optimal Transport: Wood-Chip Size Estimation for
+              Manufacturing Process Monitoring
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong>, Street, J. T., Wang, H., and
+              Marufuzzaman, M.
+            </p>
+
+            <p class="publication-venue">
+              Submitted to <em>Decision Support Systems</em>.
+            </p>
+
+            <p class="publication-links">
+              <a href="/projects/uot-detr">
+                Project page
+              </a>
+              <a
+                href="https://doi.org/10.5281/zenodo.18392693"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Dataset
+              </a>
+              <a
+                href="https://github.com/amirhossein-eskorouchi/UOT-DETR"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Code
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">R2</div>
+
+          <div>
+            <span class="status-badge">First review</span>
+
+            <h3>
+              WoodChip-MC and WoodChip-Detection: Public Image Datasets for
+              Vision-Based Wood Chip Quality Evaluation
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong>, Rahman, A., Street, J.,
+              Marufuzzaman, M., and Wang, H.
+            </p>
+
+            <p class="publication-venue">
+              Submitted to <em>Scientific Data</em>.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://doi.org/10.5281/zenodo.18392693"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Dataset
+              </a>
+              <a href="/projects/wood-chip-monitor">
+                Related system
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="publication-record">
+          <div class="publication-number">R3</div>
+
+          <div>
+            <span class="status-badge">First review</span>
+
+            <h3>
+              Knowledge-Informed Constrained Learning for Data-Efficient
+              Extracapsular Extension Assessment in Head and Neck CT
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong>, Duggar, W. N., and Wang, H.
+            </p>
+
+            <p class="publication-venue">
+              Submitted to <em>Medical Image Analysis</em>.
+            </p>
+
+            <p class="publication-links">
+              <a href="/projects/knowledge-informed-ece">
+                Project page
+              </a>
+              <a
+                href="https://github.com/amirhossein-eskorouchi/Knowledge-Informed-ECE"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Code
+              </a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="publication-section" id="abstracts">
+      <header class="section-header">
+        <div>
+          <p class="section-label">Additional scholarly output</p>
+          <h2>Selected peer-reviewed abstract</h2>
+        </div>
+        <span class="section-count">1 abstract</span>
+      </header>
+
+      <div class="publication-list">
+        <article class="publication-record">
+          <div class="publication-number">A1</div>
+
+          <div>
+            <h3>
+              <a
+                href="https://www.ovid.com/journals/medph/abstract/00005706-202510000-00342~knowledge-informed-deep-learning-for-accurate-and"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Knowledge-Informed Deep Learning for Accurate and Interpretable
+                Extracapsular Extension Detection in Head and Neck Squamous
+                Cell Carcinoma
+              </a>
+            </h3>
+
+            <p class="publication-authors">
+              <strong>Eskorouchi, A.</strong>, Duggar, W. N., and Wang, H.
+            </p>
+
+            <p class="publication-venue">
+              American Association of Physicists in Medicine Annual Meeting;
+              abstract published in <em>Medical Physics</em>, 52(10),
+              e70059111, 2025.
+            </p>
+
+            <p class="publication-links">
+              <a
+                href="https://www.ovid.com/journals/medph/abstract/00005706-202510000-00342~knowledge-informed-deep-learning-for-accurate-and"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Abstract
+              </a>
+              <a href="/projects/knowledge-informed-ece">
+                Related project
+              </a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="scholar-callout">
+      <div>
+        <h2>Complete citation record</h2>
+        <p>
+          Visit Google Scholar for citation counts, related versions, and the
+          most current publication record.
+        </p>
+      </div>
+
+      <a
+        href="https://scholar.google.com/citations?user=-2Gq9DsAAAAJ&amp;hl=en"
+        target="_blank"
+        rel="noreferrer"
+      >
+        View Google Scholar
+      </a>
     </section>
   </article>
 </BaseLayout>
+
+<style>
+  .publications-page {
+    max-width: 1320px;
+    margin-inline: auto;
+  }
+
+  .publications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .publications-header > div {
+    max-width: 900px;
+  }
+
+  .publications-header .page-introduction {
+    max-width: 850px;
+    line-height: 1.65;
+  }
+
+  .scholar-link {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #a7c6eb;
+    border-radius: 3px;
+    background: #eaf4ff;
+    padding: 0.6rem 1rem;
+    color: #075db8;
+    font-weight: 700;
+  }
+
+  .scholar-link:hover {
+    border-color: var(--link);
+    background: #deefff;
+    text-decoration: none;
+  }
+
+  .publication-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 3.25rem;
+  }
+
+  .publication-summary > div {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--soft);
+    padding: 1.15rem 1.25rem;
+  }
+
+  .publication-summary strong {
+    display: block;
+    color: var(--heading);
+    font-size: 1.55rem;
+    line-height: 1.2;
+  }
+
+  .publication-summary span {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--muted);
+    font-size: 0.94rem;
+  }
+
+  .publication-section {
+    border-top: 1px solid var(--line);
+    margin-top: 3rem;
+    padding-top: 2.35rem;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1.5rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .section-header h2 {
+    margin: 0;
+    color: var(--heading);
+    font-size: 1.55rem;
+    line-height: 1.3;
+  }
+
+  .section-label {
+    margin: 0 0 0.2rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .section-count {
+    flex: 0 0 auto;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .section-note {
+    max-width: 880px;
+    margin: -0.4rem 0 1.4rem;
+    color: var(--muted);
+  }
+
+  .publication-list {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .publication-record {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #ffffff;
+    padding: 1.3rem 1.4rem;
+  }
+
+  .publication-record:hover {
+    border-color: #c8d5e4;
+    background: #fcfdff;
+  }
+
+  .featured-record {
+    border-left: 4px solid var(--link);
+  }
+
+  .publication-number {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .publication-record h3 {
+    max-width: 1080px;
+    margin: 0 0 0.45rem;
+    color: var(--heading);
+    font-size: 1.08rem;
+    line-height: 1.45;
+  }
+
+  .publication-record h3 a {
+    font-weight: 700;
+  }
+
+  .publication-authors,
+  .publication-venue {
+    margin: 0.25rem 0;
+    line-height: 1.55;
+  }
+
+  .publication-authors {
+    color: var(--text);
+  }
+
+  .publication-venue {
+    color: var(--muted);
+  }
+
+  .publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 0.75rem 0 0;
+  }
+
+  .publication-links a {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #c8d9ed;
+    border-radius: 3px;
+    background: #f5f9fe;
+    padding: 0.22rem 0.65rem;
+    color: #075db8;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+
+  .publication-links a:hover {
+    border-color: var(--link);
+    background: #eaf4ff;
+    text-decoration: none;
+  }
+
+  .publication-unavailable {
+    display: inline-block;
+    margin: 0.65rem 0 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-style: italic;
+  }
+
+  .status-badge {
+    display: inline-block;
+    margin-bottom: 0.55rem;
+    border-radius: 999px;
+    background: #fff4db;
+    padding: 0.18rem 0.65rem;
+    color: #745400;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .scholar-callout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    border-left: 4px solid var(--link);
+    background: var(--soft);
+    padding: 1.35rem 1.5rem;
+  }
+
+  .scholar-callout h2 {
+    margin: 0 0 0.25rem;
+    color: var(--heading);
+    font-size: 1.25rem;
+  }
+
+  .scholar-callout p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .scholar-callout > a {
+    flex: 0 0 auto;
+    font-weight: 700;
+  }
+
+  @media (max-width: 850px) {
+    .publication-summary {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 680px) {
+    .publications-header,
+    .section-header,
+    .scholar-callout {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .publication-summary {
+      grid-template-columns: 1fr;
+    }
+
+    .publication-record {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+      padding: 1.1rem;
+    }
+
+    .publication-number {
+      margin-bottom: 0.15rem;
+    }
+  }
+</style>
