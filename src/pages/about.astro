@@ -210,7 +210,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <h3>Professional leadership</h3>
           <p>
             President of the Mississippi State University INFORMS Student
-            Chapter, following service as Vice President.
+            Chapter for 2026&ndash;2027, following service as Vice President.
+            <a
+              href="https://www.linkedin.com/posts/informs-mississippi-state_mediafriday-informs-research-activity-7509370567150469121-_xuk?utm_source=share&utm_medium=member_desktop&rcm=ACoAADct-vAB4vrRHDWy_PVt_--Ccs3O3n4Y5rE"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View leadership announcement
+            </a>.
           </p>
         </article>
 
@@ -218,7 +225,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <h3>Community leadership</h3>
           <p>
             Vice President of the Iranian Student Association at Mississippi
-            State University, following service as President.
+            State University, following service as President during the
+            2024&ndash;2025 academic year.
+            <a
+              href="/documents/verification/iranian-student-association-leadership-verification.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View verification
+            </a>.
           </p>
         </article>
 
@@ -232,11 +247,41 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </article>
 
         <article>
-          <h3>Conference service</h3>
-          <p>
-            Session Chair for a special session at the 2025 IISE Annual
-            Conference and reviewer for IISE and FAIM conference programs.
-          </p>
+          <h3>Conference leadership</h3>
+
+          <div class="conference-leadership-list">
+            <div class="conference-leadership-item">
+              <p>
+                <strong>Session Chair</strong><br />
+                <em>Emerging Methods in Vision-Based Decision Support</em><br />
+                2025 IISE Annual Conference &amp; Expo
+              </p>
+
+              <a
+                href="/documents/verification/iise-2025-session-chair-ai-health-diagnostics.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View verification
+              </a>
+            </div>
+
+            <div class="conference-leadership-item">
+              <p>
+                <strong>Session Chair</strong><br />
+                <em>Advanced AI Solutions in Health and Diagnostics</em><br />
+                2025 IISE Annual Conference &amp; Expo
+              </p>
+
+              <a
+                href="/documents/verification/iise-2025-session-chair-vision-based-decision-support.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View verification
+              </a>
+            </div>
+          </div>
         </article>
       </div>
     </section>
@@ -245,6 +290,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h2>Selected recognition</h2>
 
       <div class="recognition-list">
+        <article>
+          <span class="recognition-year">2026</span>
+          <p>
+            <a
+              href="/documents/verification/informs-2026-data-challenge-finalist.pdf"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open the INFORMS 2026 Data Mining Society Data Challenge finalist verification"
+            >
+              <strong>Finalist</strong>, INFORMS Data Mining Society Data Challenge
+            </a>
+          </p>
+        </article>
         <article>
           <span class="recognition-year">2026</span>
           <p>
@@ -443,6 +501,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     line-height: 1.4;
   }
 
+  .conference-leadership-list {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .conference-leadership-item + .conference-leadership-item {
+    border-top: 1px solid var(--line);
+    padding-top: 1.2rem;
+  }
+
+  .conference-leadership-item p {
+    margin: 0 0 0.45rem;
+  }
   .strength-card p,
   .detail-grid p {
     margin: 0;
@@ -575,3 +646,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
   }
 </style>
+
