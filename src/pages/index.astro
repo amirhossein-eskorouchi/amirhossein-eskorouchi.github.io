@@ -139,6 +139,59 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <figcaption>An overview of my research roadmap.</figcaption>
     </figure>
 
+    <article class="research-entry" id="state-uot-outage-forecasting">
+      <figure class="research-entry-figure">
+        <a href="/projects/state-uot-outage-forecasting"
+          aria-label="Explore the State-UOT power outage forecasting project">
+          <img class="research-entry-image"
+            src="/images/projects/state-uot-outage-forecasting/architecture.png"
+            alt="Dual-stream CNN/LSTM forecasting network trained with pointwise regression and state-wise unbalanced optimal transport."
+            width="1920" height="820" loading="lazy" />
+        </a>
+        <figcaption>
+          Coherent county forecasts from observed history and supplied future weather.
+        </figcaption>
+      </figure>
+      <div class="research-entry-content">
+        <h3>
+          <a href="/projects/state-uot-outage-forecasting">
+            Coherent Multi-Horizon Power Outage Forecasting with State-UOT
+          </a>
+        </h3>
+        <p class="research-entry-authors">
+          <strong>Amirhossein Eskorouchi</strong>, Abhro Shome Pias,
+          Dongmin Ethan Kang, and Munirul Alam · Team SIOL
+        </p>
+        <p class="research-entry-status award-title">
+          <a href="/documents/verification/informs-2026-data-challenge-finalist.pdf"
+            target="_blank" rel="noreferrer">
+            Finalist, 2026 INFORMS Data Mining Society Data Challenge
+          </a>
+        </p>
+        <p class="research-entry-links" aria-label="Power outage forecasting resources">
+          <a href="/projects/state-uot-outage-forecasting">Project page</a>
+          <span aria-hidden="true">/</span>
+          <a href="/documents/verification/informs-2026-data-challenge-finalist.pdf"
+            target="_blank" rel="noreferrer">Finalist recognition</a>
+        </p>
+        <div class="research-entry-details">
+          <p>
+            A dual-stream CNN/LSTM network combines historical outage conditions
+            and future weather to forecast county-level outage severity at
+            1-, 6-, 24-, and 48-hour horizons. State-wise unbalanced optimal
+            transport complements pointwise regression by learning how severity
+            is allocated among counties within each state.
+          </p>
+          <p>
+            The framework produces consistent predictions for the same physical
+            target hour across forecast horizons. A five-model ensemble trained
+            on 239 counties generates forecasts for 63 unseen counties across
+            four states.
+          </p>
+        </div>
+      </div>
+    </article>
+
     <article class="research-entry">
       <figure class="research-entry-figure">
         <a

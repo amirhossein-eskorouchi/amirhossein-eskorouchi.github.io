@@ -1,0 +1,189 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const images = "/images/projects/state-uot-outage-forecasting";
+---
+
+<BaseLayout
+  title="State-UOT Power Outage Forecasting | Amirhossein Eskorouchi"
+  description="Coherent multi-horizon power outage severity forecasting with CNN/LSTM networks and state-wise unbalanced optimal transport. INFORMS 2026 Data Mining Society Data Challenge finalist, Team SIOL."
+>
+  <article class="page project-detail-page">
+    <header class="page-header project-detail-header">
+      <p class="project-detail-category">
+        Time-Series Forecasting · Optimal Transport · Energy Analytics
+      </p>
+      <h1 class="page-title">Power Outage Forecasting with State-UOT</h1>
+      <p class="project-detail-subtitle">
+        Coherent multi-horizon forecasting of power outage severity with
+        state-wise unbalanced optimal transport
+      </p>
+      <p class="project-detail-authors">
+        <strong>Amirhossein Eskorouchi</strong>, Abhro Shome Pias,
+        Dongmin Ethan Kang, and Munirul Alam · Team SIOL
+      </p>
+      <p class="project-detail-status award-title">
+        <a href="/documents/verification/informs-2026-data-challenge-finalist.pdf"
+          target="_blank" rel="noreferrer">
+          Finalist, 2026 INFORMS Data Mining Society Data Challenge
+        </a>
+      </p>
+    </header>
+
+    <figure class="project-hero-figure">
+      <a href={`${images}/architecture.png`} target="_blank" rel="noreferrer"
+        aria-label="Open the full-resolution State-UOT model diagram">
+        <img src={`${images}/architecture.png`} width="1920" height="820"
+          alt="A CNN/LSTM history encoder and an LSTM future-weather encoder feed a shared decoder, trained jointly with pointwise regression and state-wise unbalanced optimal transport." />
+      </a>
+      <figcaption>
+        The forecasting network combines observed county history and supplied
+        future weather. Pointwise regression and State-UOT regularization
+        jointly train both encoders and the shared decoder.
+      </figcaption>
+    </figure>
+
+    <section class="content-section">
+      <h2>Forecasting problem</h2>
+      <p>
+        Power outage severity can rise abruptly and vary substantially among
+        counties exposed to the same weather event. Severe observations are
+        rare: just 3.0% of county-hours account for 60.5% of summed outage
+        severity index (OSI) in the training data. A useful model must capture
+        both the timing of these events and how severity is distributed across
+        counties.
+      </p>
+      <p>
+        The challenge provides 239 labeled training counties and 63 unseen test
+        counties across Indiana, Ohio, Pennsylvania, and West Virginia. For
+        each test county, the model uses 72 hours of observed weather and outage
+        history, together with 144 hours of supplied future weather. Future
+        outage observations are withheld. Forecasts are required at 1-, 6-,
+        24-, and 48-hour horizons.
+      </p>
+    </section>
+
+    <figure class="project-hero-figure">
+      <a href={`${images}/severity-concentration.png`} target="_blank" rel="noreferrer"
+        aria-label="Open the training-data severity concentration charts">
+        <img src={`${images}/severity-concentration.png`} width="1886" height="724"
+          loading="lazy"
+          alt="Training-data charts show that 3.0% of county-hours carry 60.5% of summed OSI, while roughly 10% of counties account for 40 to 59% of each state's summed OSI." />
+      </a>
+      <figcaption>
+        Severe hours and heavily affected counties carry a disproportionate
+        share of the training data's total severity.
+      </figcaption>
+    </figure>
+
+    <section class="content-section">
+      <h2>Model and learning objective</h2>
+      <p>
+        A dual-stream network encodes historical weather and outage conditions
+        through convolutional layers and an LSTM, while a separate LSTM encodes
+        supplied future weather. A shared decoder combines the county history,
+        target-hour weather representation, and normalized target-time coordinate
+        to predict severity.
+      </p>
+      <p>
+        The model is trained with masked regression on log-transformed OSI and
+        a state-conditioned unbalanced Sinkhorn divergence. The distributional
+        term compares predicted and observed severity allocations among counties
+        within each state, complementing the pointwise forecasting objective.
+        Counties are represented categorically; the transport term does not use
+        geographic distance.
+      </p>
+      <h3>Consistency across forecast horizons</h3>
+      <p>
+        Different forecast origins can refer to the same physical target hour.
+        The decoder uses the same county-history representation and target-hour
+        inputs for those requests, yielding a single consistent prediction for
+        that county and target hour at inference.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Validation and final submission</h2>
+      <p>
+        County-level five-fold validation evaluates generalization to unseen
+        counties using RMSE and MAE at all four horizons. After model selection,
+        five models with different random seeds are trained on all 239 labeled
+        counties. Their forecasts are averaged for the final submission.
+      </p>
+      <p>
+        The submission contains 9,072 forecast-origin rows for the 63 test
+        counties. Automated checks preserve the official row order and required
+        missing targets, enforce nonnegative predictions, and verify consistency
+        for repeated physical target hours.
+      </p>
+    </section>
+
+    <figure class="project-hero-figure">
+      <a href={`${images}/validation-design.png`} target="_blank" rel="noreferrer"
+        aria-label="Open the county validation and final prediction diagram">
+        <img src={`${images}/validation-design.png`} width="1894" height="790"
+          loading="lazy"
+          alt="Five-fold county validation is separate from final training: five models are trained on all 239 training counties and averaged to forecast 63 held-out counties." />
+      </a>
+      <figcaption>
+        County validation measures generalization. Final prediction uses a
+        five-model ensemble trained on all available labeled counties.
+      </figcaption>
+    </figure>
+
+    <section class="content-section">
+      <h2>Forecast patterns</h2>
+      <p>
+        Forecasts vary substantially across counties and target hours. In the
+        final test predictions, seven counties account for 67.4% of summed
+        predicted OSI, and the first 24 target hours account for 59.9%. The
+        submission checks report no negative forecasts and no disagreement
+        between requests for the same physical target hour.
+      </p>
+      <p>
+        These visualizations describe model predictions for counties whose
+        future outage labels are hidden; they do not measure test-set accuracy.
+      </p>
+    </section>
+
+    <figure class="project-hero-figure">
+      <a href={`${images}/holdout-forecasts.png`} target="_blank" rel="noreferrer"
+        aria-label="Open the forecast heatmaps for all 63 test counties">
+        <img src={`${images}/holdout-forecasts.png`} width="1920" height="742"
+          loading="lazy"
+          alt="Predicted OSI heatmaps for 20 Indiana, 18 Ohio, 15 Pennsylvania, and 10 West Virginia test counties over March 14 through March 19." />
+      </a>
+      <figcaption>
+        Forecast severity across all 63 test counties, grouped by state. Each
+        row represents a county and each column a physical target hour.
+      </figcaption>
+    </figure>
+
+    <figure class="project-hero-figure">
+      <a href={`${images}/county-trajectories.png`} target="_blank" rel="noreferrer"
+        aria-label="Open two example county forecast trajectories">
+        <img src={`${images}/county-trajectories.png`} width="1896" height="752"
+          loading="lazy"
+          alt="Carroll County, Ohio shows predicted decline after high initial severity; Boone County, West Virginia shows later predicted escalation. Shading shows the range across five models." />
+      </a>
+      <figcaption>
+        Observed history and ensemble forecasts for two contrasting counties.
+        Shading shows the range across the five models, rather than a calibrated
+        confidence interval.
+      </figcaption>
+    </figure>
+
+    <section class="content-section">
+      <h2>Technical stack</h2>
+      <p>Python · PyTorch · GeomLoss · NumPy · Pandas · scikit-learn · Matplotlib</p>
+    </section>
+
+    <section class="content-section">
+      <p>
+        <a href="/">Return to the homepage</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/projects">View all projects</a>
+      </p>
+    </section>
+  </article>
+</BaseLayout>
