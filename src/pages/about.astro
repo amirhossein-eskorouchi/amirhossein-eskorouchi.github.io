@@ -290,6 +290,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h2>Selected recognition</h2>
 
       <div class="recognition-list">
+        <article id="phi-kappa-phi">
+          <span class="recognition-year">2026</span>
+          <p>
+            <a
+              href="/documents/verification/phi-kappa-phi-membership.pdf"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open the official Phi Kappa Phi membership confirmation letter"
+            >
+              <strong>Member</strong>, The Honor Society of Phi Kappa Phi
+            </a>
+            <span class="recognition-description">
+              Elected at Mississippi State University for academic excellence.
+              Membership is by invitation, with graduate students selected from
+              the top 10% of their class.
+            </span>
+          </p>
+        </article>
+
         <article>
           <span class="recognition-year">2026</span>
           <p>
@@ -388,6 +407,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
+  .recognition-description {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
   .about-page {
     max-width: 1320px;
     margin-inline: auto;
