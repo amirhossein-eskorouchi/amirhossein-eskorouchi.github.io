@@ -1,0 +1,170 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "WoodChip-Detection Dataset | Amirhossein Eskorouchi";
+const description = "WoodChip-Detection is an open wood chip image dataset with 229 RGB images and 6,845 manually annotated polygon instances for object detection and instance segmentation. Download version 1.1 from Zenodo.";
+const pageUrl = "https://amirhossein-eskorouchi.github.io/datasets/woodchip-detection";
+const doiUrl = "https://doi.org/10.5281/zenodo.24201023";
+const downloadUrl = "https://zenodo.org/records/24201023/files/WoodChip-Detection_v1.1.zip?download=1";
+const dataset = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": doiUrl,
+  name: "WoodChip-Detection: A Public Dataset for Dense Wood Chip Detection and Instance Segmentation",
+  alternateName: "WoodChip-Detection",
+  description,
+  url: pageUrl,
+  sameAs: "https://zenodo.org/records/24201023",
+  identifier: doiUrl,
+  version: "1.1",
+  datePublished: "2026-11-13",
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  isAccessibleForFree: true,
+  keywords: ["wood chip dataset", "wood chip detection", "instance segmentation", "polygon annotations", "computer vision", "biomass", "LabelMe"],
+  creator: [
+    { "@type": "Person", name: "Amirhossein Eskorouchi", url: "https://amirhossein-eskorouchi.github.io" },
+    { "@type": "Person", name: "Jason Tyler Street" },
+    { "@type": "Person", name: "James Wooten" },
+    { "@type": "Person", name: "Mohammad Marufuzzaman" },
+    { "@type": "Person", name: "Haifeng Wang" }
+  ],
+  publisher: { "@type": "Organization", name: "Zenodo", url: "https://zenodo.org" },
+  distribution: {
+    "@type": "DataDownload",
+    name: "WoodChip-Detection version 1.1",
+    encodingFormat: "application/zip",
+    contentUrl: downloadUrl
+  }
+};
+
+const groups = [
+  { source: "Source 1", images: 54, annotations: 2272 },
+  { source: "Source 2, batch 1", images: 82, annotations: 2049 },
+  { source: "Source 2, batch 2", images: 43, annotations: 1320 },
+  { source: "Source 3", images: 50, annotations: 1204 }
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={pageUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(dataset).replace(/</g, "\\u003c")} />
+  </Fragment>
+
+  <article class="page">
+    <header class="page-header">
+      <h1 class="page-title">WoodChip-Detection</h1>
+      <p class="page-introduction">
+        A public dataset for dense wood chip detection and instance segmentation.
+      </p>
+      <div class="profile-links" aria-label="WoodChip-Detection downloads">
+        <a href={downloadUrl}>Download dataset ZIP</a>
+        <a href={doiUrl} target="_blank" rel="noreferrer">View on Zenodo</a>
+      </div>
+    </header>
+
+    <section class="content-section" aria-labelledby="overview-heading">
+      <h2 id="overview-heading">Wood chip image dataset</h2>
+      <p>
+        <strong>WoodChip-Detection</strong> contains <strong>229 RGB images</strong>
+        and <strong>6,845 manually annotated wood chip instances</strong>.
+        Polygon annotations in LabelMe JSON format support object detection,
+        instance segmentation, and geometry analysis for biomass quality evaluation.
+      </p>
+      <p>
+        The images were collected across three acquisition sources, with Source 2
+        divided into two batches representing distinct capture sessions. Scenes
+        vary in chip arrangement, appearance, and density, including sparse and
+        highly cluttered views. Images represent acquisition views and should
+        not be interpreted as independent physical material samples.
+      </p>
+      <dl class="dataset-facts">
+        <div><dt>Version</dt><dd>1.1</dd></div>
+        <div><dt>RGB images</dt><dd>229</dd></div>
+        <div><dt>Polygon instances</dt><dd>6,845</dd></div>
+        <div><dt>License</dt><dd>CC BY 4.0</dd></div>
+      </dl>
+    </section>
+
+    <section class="content-section" aria-labelledby="contents-heading">
+      <h2 id="contents-heading">Images and annotations</h2>
+      <p>
+        Each JPG image is paired with a LabelMe JSON annotation file. One class,
+        labeled <code>1</code>, represents wood chips. Polygon coordinates
+        describe individual chip instances; bounding boxes can be derived from
+        the polygons for object detection workflows. Image resolutions are
+        1920 &times; 1080 or 640 &times; 480 pixels, depending on source and batch.
+      </p>
+      <div class="table-scroll">
+        <table>
+          <caption>WoodChip-Detection version 1.1 by source and batch</caption>
+          <thead><tr><th scope="col">Acquisition group</th><th scope="col">Images</th><th scope="col">Instances</th></tr></thead>
+          <tbody>
+            {groups.map((group) => (
+              <tr><th scope="row">{group.source}</th><td>{group.images}</td><td>{group.annotations.toLocaleString("en-US")}</td></tr>
+            ))}
+          </tbody>
+          <tfoot><tr><th scope="row">Total</th><td>229</td><td>6,845</td></tr></tfoot>
+        </table>
+      </div>
+      <p>
+        The download contains a <code>dataset</code> directory and
+        <code>README.md</code>. The README documents the folder structure,
+        image naming conventions, annotation format, and dataset statistics.
+      </p>
+    </section>
+
+    <section class="content-section" aria-labelledby="uses-heading">
+      <h2 id="uses-heading">Research uses</h2>
+      <ul>
+        <li>Wood chip object detection and instance segmentation</li>
+        <li>Chip geometry and size analysis</li>
+        <li>Small-object localization and performance under clutter</li>
+        <li>Computer vision for industrial biomass quality evaluation</li>
+      </ul>
+      <p>
+        Related work includes <a href="/projects/uot-detr">UOT-DETR for wood chip size estimation</a>
+        and the <a href="/projects/wood-chip-monitor">Wood-Chip Monitor system</a>.
+        See <a href="/publications#public-dataset">the dataset publication</a> for related research outputs.
+      </p>
+    </section>
+
+    <section class="content-section" aria-labelledby="citation-heading">
+      <h2 id="citation-heading">License and citation</h2>
+      <p>
+        The dataset is available under the
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">Creative Commons Attribution 4.0 International license</a>.
+        Please cite the dataset when using its images or annotations.
+      </p>
+      <p class="dataset-citation">
+        Eskorouchi, A., Street, J. T., Wooten, J., Marufuzzaman, M., &amp; Wang, H.
+        (2026). <em>WoodChip-Detection: A Public Dataset for Dense Wood Chip
+        Detection and Instance Segmentation</em> (Version 1.1) [Data set]. Zenodo.
+        <a href={doiUrl}>{doiUrl}</a>
+      </p>
+      <p>
+        Creators: Amirhossein Eskorouchi, Jason Tyler Street, James Wooten,
+        Mohammad Marufuzzaman, and Haifeng Wang.
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .dataset-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin: 24px 0; }
+  .dataset-facts div { border: 1px solid var(--line); padding: 16px; border-radius: 3px; }
+  .dataset-facts dt { color: var(--muted); font-size: 0.9rem; }
+  .dataset-facts dd { margin: 4px 0 0; color: var(--heading); font-size: 1.35rem; font-weight: 700; }
+  .table-scroll { overflow-x: auto; margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; text-align: left; }
+  caption { text-align: left; margin-bottom: 12px; color: var(--muted); }
+  th, td { padding: 12px; border-bottom: 1px solid var(--line); }
+  tbody th { font-weight: 400; }
+  tfoot { font-weight: 700; }
+  .dataset-citation { border-left: 3px solid var(--link); padding-left: 18px; overflow-wrap: anywhere; }
+</style>

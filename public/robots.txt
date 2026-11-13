@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amirhossein-eskorouchi.github.io/sitemap.xml
